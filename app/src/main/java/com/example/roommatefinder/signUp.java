@@ -41,10 +41,27 @@ public class signUp extends AppCompatActivity {
 
 
     }
+    private boolean isValidPassword(String password) {
+        /*
+         * Password must meet the following criteria:
+         * - At least 8 characters long
+         * - Contains at least one uppercase letter
+         * - Contains at least one lowercase letter
+         * - Contains at least one digit
+         */
+        String passwordPattern = "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)[a-zA-Z\\d]{8,}$";
+        return password.matches(passwordPattern);
+    }
+
 
     private void createUser(){
         String email = Email.getText().toString();
         String password = Password.getText().toString();
+
+        if (!isValidPassword(password)) {
+            Password.setError("Password must be at least 8 characters long and contain at least one uppercase letter, one lowercase letter, and one digit.");
+            return;
+        }
 
         if (TextUtils.isEmpty(email)){
             Email.setError("Email cannot be empty");
