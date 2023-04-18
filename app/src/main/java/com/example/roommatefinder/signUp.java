@@ -21,10 +21,17 @@ public class signUp extends AppCompatActivity {
     Button btnRegister;
     EditText Email ;
      EditText Password;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signup);
+
+
+
+
+
+
         mAuth = FirebaseAuth.getInstance();
 
 
