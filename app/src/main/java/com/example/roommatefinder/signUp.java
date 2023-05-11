@@ -11,28 +11,65 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.facebook.AccessToken;
+import com.facebook.CallbackManager;
+import com.facebook.FacebookCallback;
+import com.facebook.FacebookException;
+import com.facebook.login.LoginManager;
+import com.facebook.login.LoginResult;
+import com.facebook.login.widget.LoginButton;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthCredential;
 import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FacebookAuthProvider;
 import com.google.firebase.auth.FirebaseAuth;
+
+import java.util.Arrays;
 
 public class signUp extends AppCompatActivity {
     FirebaseAuth mAuth;
     Button btnRegister;
     EditText Email ;
      EditText Password;
+    CallbackManager callbackManager ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signup);
 
-
-
-
-
-
         mAuth = FirebaseAuth.getInstance();
+
+
+         callbackManager = CallbackManager.Factory.create();
+
+        LoginManager.getInstance().registerCallback(callbackManager,
+                new FacebookCallback<LoginResult>() {
+                    @Override
+                    public void onSuccess(LoginResult loginResult) {
+                AccessToken accessToken = loginResult.getAccessToken();
+                AuthCredential credential = FacebookAuthProvider.getCredential(accessToken.getToken());
+                FirebaseAuth.getInstance().signInWithCredential(credential);
+                        Toast.makeText(signUp.this,
+                                "signed up successfuly", Toast.LENGTH_LONG).show();
+
+                    }
+
+
+
+            @Override
+            public void onCancel() {
+                // Handle login cancellation
+            }
+
+            @Override
+            public void onError(FacebookException error) {
+                // Handle login error
+            }
+        });
+
+
 
 
         Email = findViewById(R.id.Email);
@@ -45,7 +82,16 @@ public class signUp extends AppCompatActivity {
             createUser();
         });
 
+        Button fb_btn = findViewById(R.id.login_button);
+        fb_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
 
+
+                LoginManager.getInstance().logInWithReadPermissions(signUp.this, Arrays.asList("public_profile"));
+
+            }
+        });
 
     }
     private boolean isValidPassword(String password) {
@@ -89,5 +135,11 @@ public class signUp extends AppCompatActivity {
                 }
             });
 }
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        callbackManager.onActivityResult(requestCode, resultCode, data);
+        super.onActivityResult(requestCode, resultCode, data);
     }
 }
