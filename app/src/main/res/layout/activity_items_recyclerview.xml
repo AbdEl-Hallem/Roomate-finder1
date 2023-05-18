@@ -1,18 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 
-
-<androidx.cardview.widget.CardView
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/roommates"
     android:layout_width="match_parent"
     android:layout_height="319dp"
-    app:cardUseCompatPadding="true"
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:backgroundTint="#D9D9D9"
     app:cardCornerRadius="20dp"
 
 
-    >
+    app:cardUseCompatPadding="true">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -24,43 +22,39 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            >
+            android:orientation="horizontal">
 
 
             <ImageView
                 android:layout_width="52dp"
                 android:layout_height="54dp"
 
-                android:scaleType="fitStart"
-                android:src="@drawable/add_photo_ic"
-                android:layout_marginTop="4dp"
                 android:layout_marginStart="16dp"
-                />
+                android:layout_marginTop="4dp"
+                android:scaleType="fitStart"
+                android:src="@drawable/add_photo_ic" />
+
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:orientation="vertical"
-                android:padding="8dp"
-                >
+                android:padding="8dp">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:fontFamily="@font/nunito_bold"
                     android:text="Name"
                     android:textSize="16sp"
-                    android:fontFamily="@font/nunito_bold"
 
 
                     />
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Adress"
-                    android:textSize="12sp"
-                    />
-
-
+                    android:textSize="12sp" />
 
 
             </LinearLayout>
@@ -69,72 +63,77 @@
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/fav_svg"
-                android:padding="4dp"
                 android:layout_marginLeft="160dp"
+                android:padding="4dp"
+                android:src="@drawable/fav_svg"
 
                 />
+
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/pointsthree_svg"
                 android:padding="4dp"
-                />
+                android:src="@drawable/pointsthree_svg" />
 
 
         </LinearLayout>
+
         <TextView
+            android:id="@+id/full_adress"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Full adress"
             android:layout_marginStart="20dp"
-            />
+            android:text="Full adress" />
+
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:orientation="horizontal"
-            >
+            android:orientation="horizontal">
+
             <TextView
+                android:id="@+id/size"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Size"
                 android:layout_marginStart="10dp"
-                android:padding="8dp"
                 android:drawableStart="@drawable/measurment_svg"
                 android:drawablePadding="4dp"
+                android:padding="8dp"
 
 
-                />
+                android:text="Size" />
+
             <TextView
+                android:id="@+id/baths"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="baths"
                 android:layout_marginStart="10dp"
-                android:padding="8dp"
                 android:drawableStart="@drawable/shower_svg"
                 android:drawablePadding="4dp"
+                android:padding="8dp"
 
 
-                />
+                android:text="baths" />
+
             <TextView
+                android:id="@+id/beds"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="beds"
                 android:layout_marginStart="10dp"
-                android:padding="8dp"
                 android:drawableStart="@drawable/bedroom_svg"
                 android:drawablePadding="4dp"
+                android:padding="8dp"
 
 
-                />
+                android:text="beds" />
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Roommates"
                 android:layout_marginStart="10dp"
-                android:padding="8dp"
                 android:drawableStart="@drawable/user_svg"
                 android:drawablePadding="4dp"
+                android:padding="8dp"
+                android:text="Roommates"
 
 
                 />
@@ -143,32 +142,34 @@
         </LinearLayout>
 
         <ImageView
+            android:id="@+id/image_post"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/img_card"
             android:layout_margin="8dp"
-            />
+            android:background="@drawable/img_card" />
+
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:orientation="horizontal"
-            >
+            android:orientation="horizontal">
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Message"
+                android:layout_margin="8dp"
                 android:layout_marginStart="8dp"
                 android:drawableStart="@drawable/messgae_svg"
                 android:drawablePadding="4dp"
-                android:layout_margin="8dp"
-                />
+                android:text="Message" />
+
             <TextView
+                android:id="@+id/price"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Price"
                 android:layout_marginLeft="220dp"
-                android:textSize="16sp"
-                android:layout_marginTop="8dp"/>
+                android:layout_marginTop="8dp"
+                android:text="Price"
+                android:textSize="16sp" />
 
 
         </LinearLayout>
