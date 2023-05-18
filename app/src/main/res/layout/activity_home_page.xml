@@ -6,61 +6,59 @@
     android:layout_height="match_parent"
     tools:context=".home_page">
 
-    <ImageView
-        android:id="@+id/top_frame"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_marginBottom="622dp"
-        app:layout_constraintBottom_toTopOf="@+id/Home"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/top_frame" />
+    <!--    <ImageView-->
+    <!--        android:id="@+id/top_frame"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="match_parent"-->
+    <!--        android:layout_marginBottom="622dp"-->
+    <!--        app:layout_constraintBottom_toTopOf="@+id/Home"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        app:layout_constraintHorizontal_bias="0.0"-->
+    <!--        app:layout_constraintStart_toStartOf="parent"-->
+    <!--        app:layout_constraintTop_toTopOf="parent"-->
+    <!--        app:srcCompat="@drawable/rectangle" />-->
 
     <TextView
         android:id="@+id/textView14"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@drawable/rectangle"
         android:fontFamily="@font/nunito"
+        android:gravity="center"
         android:text="Roommate finder"
         android:textColor="@color/white"
         android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="@+id/top_frame"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/top_frame"
-        app:layout_constraintTop_toTopOf="@+id/top_frame"
-        app:layout_constraintVertical_bias="0.285" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/search"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="@+id/top_frame"
-        app:layout_constraintEnd_toEndOf="@+id/top_frame"
-        app:layout_constraintHorizontal_bias="0.533"
-        app:layout_constraintStart_toEndOf="@+id/textView14"
+        android:layout_marginEnd="56dp"
+        app:layout_constraintBottom_toBottomOf="@+id/textView14"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.587"
         app:srcCompat="@drawable/searchsvg" />
 
     <ImageView
         android:id="@+id/filter"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="@+id/top_frame"
-        app:layout_constraintEnd_toEndOf="@+id/top_frame"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintBottom_toBottomOf="@+id/search"
+        app:layout_constraintEnd_toEndOf="@+id/textView14"
         app:layout_constraintStart_toEndOf="@+id/search"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.591"
         app:srcCompat="@drawable/filtersvg" />
 
     <ImageView
         android:id="@+id/bottom_frame"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="685dp"
+        android:layout_marginTop="660dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/bottom_frame" />
 
@@ -146,11 +144,11 @@
         android:id="@+id/linear"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:orientation="vertical"
         app:layout_constraintBottom_toTopOf="@+id/bottom_frame"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/top_frame"
-        android:orientation="vertical">
+        app:layout_constraintTop_toBottomOf="@+id/textView14">
 
         <EditText
             android:id="@+id/post_edittext"

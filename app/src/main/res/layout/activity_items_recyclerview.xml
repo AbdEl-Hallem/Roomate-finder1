@@ -33,7 +33,7 @@
                 android:layout_height="54dp"
 
                 android:scaleType="fitStart"
-                android:src="@drawable/logo"
+                android:src="@drawable/add_photo_ic"
                 android:layout_marginTop="4dp"
                 android:layout_marginStart="16dp"
                 />
