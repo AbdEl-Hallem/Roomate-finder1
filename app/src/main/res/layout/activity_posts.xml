@@ -1,0 +1,874 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:contentDescription="postss">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:contentDescription="posts"
+        android:orientation="vertical"
+        tools:context=".posts">
+
+
+        <ImageView
+            android:id="@+id/fiil_the_description"
+            android:layout_width="360dp"
+            android:layout_height="90dp"
+            android:layout_gravity="center_horizontal"
+            android:src="@drawable/img"
+            />
+
+        <TextView
+
+
+            android:id="@+id/property_type"
+            android:layout_width="wrap_content"
+
+            android:layout_height="wrap_content"
+            android:background="@drawable/property_type"
+            android:fontFamily="@font/nunito_semibold"
+            android:paddingStart="20dp"
+            android:paddingTop="7dp"
+            android:text="Property type"
+            android:textColor="#461D8D"
+            android:textSize="19sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/fiil_the_description"
+
+
+            />
+        <androidx.cardview.widget.CardView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#F7EFFE">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <TextView
+                    android:id="@+id/house_textview"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:drawableStart="@drawable/ph_house_line_bold"
+                    android:fontFamily="@font/nunito_semibold"
+                    android:text="House"
+                    android:textColor="#9747FF"
+                    android:textSize="20sp"
+                    android:drawablePadding="16dp"
+                    />
+                <TextView
+                    android:id="@+id/apartment_textview"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:drawableStart="@drawable/apartment"
+                    android:fontFamily="@font/nunito_semibold"
+                    android:text="Apartment"
+                    android:textColor="#9747FF"
+                    android:textSize="20sp"
+                    android:drawablePadding="16dp"
+                    />
+                <TextView
+                    android:id="@+id/villa_textview"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:drawableStart="@drawable/villa"
+                    android:fontFamily="@font/nunito_semibold"
+                    android:text="Villa"
+                    android:textColor="#9747FF"
+                    android:textSize="20sp"
+                    android:drawablePadding="16dp"
+                    />
+
+                <TextView
+                    android:id="@+id/other_amenities_textview"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:drawableStart="@drawable/other"
+                    android:fontFamily="@font/nunito_semibold"
+                    android:text="Other"
+                    android:textColor="#9747FF"
+                    android:textSize="20sp"
+                    android:drawablePadding="16dp"
+                    />
+
+
+
+            </LinearLayout>
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_gravity="center"
+                    android:paddingStart="205dp"
+                    >
+                    <RadioGroup
+                        android:id="@+id/property_type_radiogroup"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        >
+
+                        <RadioButton
+                            android:id="@+id/house_radiobutton"
+
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:button="@drawable/checkbox"
+
+                            android:textColor="#9747FF"
+                            android:textSize="20sp"
+                            tools:ignore="TouchTargetSizeCheck" />
+
+                        <RadioButton
+                            android:id="@+id/apartment_radiobutton"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+
+                            android:button="@drawable/checkbox"
+                            android:textColor="#9747FF"
+                            android:textSize="20sp"
+                            tools:ignore="TouchTargetSizeCheck" />
+
+                        <RadioButton
+                            android:id="@+id/villa_radiobutton"
+                            android:layout_width="48dp"
+                            android:layout_height="wrap_content"
+
+                            android:button="@drawable/checkbox"
+                            android:textColor="#9747FF"
+                            android:textSize="20sp"
+                            tools:ignore="TouchTargetSizeCheck" />
+                        <RadioButton
+                            android:id="@+id/other_amenities_radiobutton"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+
+                            android:button="@drawable/checkbox"
+                            android:textColor="#9747FF"
+                            android:textSize="20sp"
+                            tools:ignore="TouchTargetSizeCheck" />
+
+
+
+
+
+
+                    </RadioGroup>
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+
+
+
+        <TextView
+            android:id="@+id/amenities"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/amenities_background"
+            android:fontFamily="@font/nunito_semibold"
+            android:paddingStart="25dp"
+            android:paddingTop="7dp"
+            android:text="Amenities"
+            android:textColor="#461D8D"
+            android:textSize="19sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/property_type_card" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/amenities_card"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:backgroundTint="#F7EFFE"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/amenities">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <TextView
+                        android:id="@+id/garage_textview"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:drawableStart="@drawable/garage"
+                        android:fontFamily="@font/nunito_semibold"
+                        android:text="Garage"
+                        android:textColor="#9747FF"
+                        android:textSize="20sp"
+                        android:drawablePadding="16dp"
+                        />
+                    <TextView
+                        android:id="@+id/parking_textview"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:drawableStart="@drawable/parking"
+                        android:fontFamily="@font/nunito_semibold"
+                        android:text="Parking"
+                        android:textColor="#9747FF"
+                        android:textSize="20sp"
+                        android:drawablePadding="16dp"
+                        />
+                    <TextView
+                        android:id="@+id/internet_textview"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:drawableStart="@drawable/internet"
+                        android:fontFamily="@font/nunito_semibold"
+                        android:text="Internet"
+                        android:textColor="#9747FF"
+                        android:textSize="20sp"
+                        android:drawablePadding="16dp"
+                        />
+                    <TextView
+                        android:id="@+id/balacony_textview"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:drawableStart="@drawable/balacony"
+                        android:fontFamily="@font/nunito_semibold"
+                        android:text="Balcony|Terrace"
+                        android:textColor="#9747FF"
+                        android:textSize="20sp"
+                        android:drawablePadding="16dp"
+                        />
+                    <TextView
+                        android:id="@+id/garden_textview"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:drawableStart="@drawable/garden"
+                        android:fontFamily="@font/nunito_semibold"
+                        android:text="Garden|Yard"
+                        android:textColor="#9747FF"
+                        android:textSize="20sp"
+                        android:drawablePadding="16dp"
+                        />
+                    <TextView
+                        android:id="@+id/workingout_textview"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:drawableStart="@drawable/workingout"
+                        android:fontFamily="@font/nunito_semibold"
+                        android:text="Workout Facilities"
+                        android:textColor="#9747FF"
+                        android:textSize="20sp"
+                        android:drawablePadding="16dp"
+                        />
+                    <TextView
+                        android:id="@+id/security_textview"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:drawableStart="@drawable/security"
+                        android:fontFamily="@font/nunito_semibold"
+                        android:text="Securities"
+                        android:textColor="#9747FF"
+                        android:textSize="20sp"
+                        android:drawablePadding="16dp"
+                        />
+                    <TextView
+                        android:id="@+id/pets_textview"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:drawableStart="@drawable/pets"
+                        android:fontFamily="@font/nunito_semibold"
+                        android:text="Pets Allowed"
+                        android:textColor="#9747FF"
+                        android:textSize="20sp"
+                        android:drawablePadding="16dp"
+                        />
+
+                </LinearLayout>
+                <LinearLayout
+                    android:paddingTop="9dp"
+                    android:layout_gravity="center"
+                    android:paddingStart="140dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+
+
+                    >
+                    <CheckBox
+                        android:id="@+id/garage_checkbox"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:button="@drawable/checkbox"
+                        android:textColor="#9747FF"
+                        android:textSize="20sp"
+                        tools:ignore="TouchTargetSizeCheck" />
+
+                    <CheckBox
+                        android:id="@+id/parking_checkbox"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:button="@drawable/checkbox"
+                        android:textColor="#9747FF"
+                        android:textSize="20sp"
+                        tools:ignore="TouchTargetSizeCheck" />
+
+                    <CheckBox
+                        android:id="@+id/internet_checkbox"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:button="@drawable/checkbox"
+                        android:textColor="#9747FF"
+                        android:textSize="20sp"
+                        tools:ignore="TouchTargetSizeCheck" />
+                    <CheckBox
+                        android:id="@+id/balacony_checkbox"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:button="@drawable/checkbox"
+                        android:textColor="#9747FF"
+                        android:textSize="20sp"
+                        tools:ignore="TouchTargetSizeCheck" />
+                    <CheckBox
+                        android:id="@+id/garden_checkbox"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:button="@drawable/checkbox"
+                        android:textColor="#9747FF"
+                        android:textSize="20sp"
+                        tools:ignore="TouchTargetSizeCheck" />
+                    <CheckBox
+                        android:id="@+id/workingout_checkbox"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:button="@drawable/checkbox"
+                        android:textColor="#9747FF"
+                        android:textSize="20sp"
+                        tools:ignore="TouchTargetSizeCheck" />
+                    <CheckBox
+                        android:id="@+id/securities_checkbox"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:button="@drawable/checkbox"
+                        android:textColor="#9747FF"
+                        android:textSize="20sp"
+                        tools:ignore="TouchTargetSizeCheck" />
+                    <CheckBox
+                        android:id="@+id/pets_checkbox"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:button="@drawable/checkbox"
+                        android:textColor="#9747FF"
+                        android:textSize="20sp"
+                        tools:ignore="TouchTargetSizeCheck" />
+
+
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:id="@+id/furnishing"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/furnishing_background"
+            android:fontFamily="@font/nunito_semibold"
+            android:paddingStart="25dp"
+            android:paddingTop="7dp"
+            android:text="Furnishing"
+            android:textColor="#461D8D"
+            android:textSize="19sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/amenities_card" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/furnishing_card"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:backgroundTint="#F7EFFE"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/furnishing">
+            <LinearLayout
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <TextView
+                        android:id="@+id/furnishing_textview"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:drawableStart="@drawable/furniture"
+                        android:fontFamily="@font/nunito_semibold"
+                        android:text="Furnished"
+                        android:textColor="#9747FF"
+                        android:textSize="20sp"
+                        android:drawablePadding="16dp"
+                        />
+                    <TextView
+                        android:id="@+id/notfurnishing_textview"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:drawableStart="@drawable/furniture"
+                        android:fontFamily="@font/nunito_semibold"
+                        android:text="Not Furnished"
+                        android:textColor="#9747FF"
+                        android:textSize="20sp"
+                        android:drawablePadding="16dp"
+                        />
+
+                </LinearLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_gravity="center"
+                android:paddingStart="180dp">
+                <RadioGroup
+                    android:id="@+id/furnishing_radiogroup"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    >
+                <RadioButton
+                    android:id="@+id/furnished_radiobutton"
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:button="@drawable/checkbox"
+
+                    android:textColor="#9747FF"
+                    android:textSize="20sp"
+                    tools:ignore="TouchTargetSizeCheck" />
+
+                <RadioButton
+                    android:id="@+id/notfurnished_radiobutton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:button="@drawable/checkbox"
+                    android:textColor="#9747FF"
+                    android:textSize="20sp"
+                    tools:ignore="TouchTargetSizeCheck" />
+                </RadioGroup>
+
+
+
+
+
+
+
+            </LinearLayout>
+            </LinearLayout>
+
+
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:id="@+id/if_amenities_furnished_included"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/if_amenities_furnished_included"
+            android:fontFamily="@font/nunito_semibold"
+            android:paddingStart="25dp"
+            android:paddingTop="7dp"
+            android:text="If amenities furnished included"
+            android:textColor="#461D8D"
+            android:textSize="19sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/furnishing_card" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/if_amenities_furnished_included_card"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:backgroundTint="#F7EFFE"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/furnishing">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <TextView
+                        android:id="@+id/washingmachine_textview"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:drawableStart="@drawable/washingmachine"
+                        android:fontFamily="@font/nunito_semibold"
+                        android:text="Washing Machine"
+                        android:textColor="#9747FF"
+                        android:textSize="20sp"
+                        android:drawablePadding="16dp"
+                        />
+                    <TextView
+                        android:id="@+id/tv_textview"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:drawableStart="@drawable/tv"
+                        android:fontFamily="@font/nunito_semibold"
+                        android:text="TV Unit"
+                        android:textColor="#9747FF"
+                        android:textSize="20sp"
+                        android:drawablePadding="16dp"
+                        />
+                    <TextView
+                        android:id="@+id/airconditioner_textview"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:drawableStart="@drawable/tv"
+                        android:fontFamily="@font/nunito_semibold"
+                        android:text="Air Conditioning"
+                        android:textColor="#9747FF"
+                        android:textSize="20sp"
+                        android:drawablePadding="16dp"
+                        />
+
+                    <TextView
+                        android:id="@+id/otherappliance_textview"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:drawableStart="@drawable/fridge"
+                        android:drawablePadding="16dp"
+                        android:fontFamily="@font/nunito_semibold"
+                        android:text="Other Appliances"
+                        android:textColor="#9747FF"
+                        android:textSize="20sp" />
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_gravity="right"
+                    android:paddingStart="151dp">
+                    <CheckBox
+                        android:id="@+id/washingmachine_checkbox"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:button="@drawable/checkbox"
+                        android:textColor="#9747FF"
+                        android:textSize="20sp"
+                        tools:ignore="TouchTargetSizeCheck" />
+                    <CheckBox
+                        android:id="@+id/tv_checkbox"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:button="@drawable/checkbox"
+                        android:textColor="#9747FF"
+                        android:textSize="20sp"
+                        tools:ignore="TouchTargetSizeCheck" />
+                    <CheckBox
+                        android:id="@+id/airconditioner_checkbox"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:button="@drawable/checkbox"
+                        android:textColor="#9747FF"
+                        android:textSize="20sp"
+                        tools:ignore="TouchTargetSizeCheck" />
+                    <CheckBox
+                        android:id="@+id/other_checkbox"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:button="@drawable/checkbox"
+                        android:textColor="#9747FF"
+                        android:textSize="20sp"
+                        tools:ignore="TouchTargetSizeCheck" />
+
+
+
+
+
+
+
+
+
+                </LinearLayout>
+            </LinearLayout>
+
+
+
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:id="@+id/nu_of_bedrooms"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/nm_of_bedrooms_background"
+            android:fontFamily="@font/nunito_semibold"
+            android:paddingStart="15dp"
+            android:paddingTop="7dp"
+            android:text="Numnber OF Bed Rooms"
+            android:textColor="#461D8D"
+            android:textSize="19sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/if_amenities_furnished_included_card" />
+
+
+
+            <EditText
+                android:id="@+id/edit_text_no_beds"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/rectangle_profile_activity"
+                android:padding="8dp"
+                android:selectAllOnFocus="true"
+                android:inputType="number"
+
+                tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
+
+        <TextView
+            android:id="@+id/property_address"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/property_address_background"
+            android:fontFamily="@font/nunito_semibold"
+            android:paddingStart="20dp"
+            android:paddingTop="7dp"
+            android:text="Property Address"
+            android:textColor="#461D8D"
+            android:textSize="19sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/nm_of_bedrooms_card" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/nunito_bold"
+            android:lineHeight="21px"
+            android:paddingStart="5dp"
+            android:text="Area"
+            android:textColor="#461D8D"
+            android:textSize="18sp"
+
+            />
+
+        <EditText
+
+            android:id="@+id/edit_text_area_posts"
+            android:layout_width="341dp"
+            android:layout_height="58dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/rectangle_profile_activity"
+            android:padding="8dp"
+            android:selectAllOnFocus="true"
+            tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/nunito_bold"
+            android:lineHeight="21px"
+            android:paddingStart="5dp"
+            android:text="Full Address"
+            android:textColor="#461D8D"
+            android:textSize="18sp"
+
+            />
+
+        <EditText
+            android:id="@+id/edit_text_full_address_posts"
+            android:layout_width="341dp"
+            android:layout_height="58dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/rectangle_profile_activity"
+            android:padding="8dp"
+            android:selectAllOnFocus="true"
+            tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
+
+        <TextView
+            android:id="@+id/price_availability"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/property_address_background"
+            android:fontFamily="@font/nunito_semibold"
+            android:paddingStart="20dp"
+            android:paddingTop="7dp"
+            android:text="Price | Availability"
+            android:textColor="#461D8D"
+            android:textSize="19sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/nm_of_bedrooms_card" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/nunito_bold"
+            android:lineHeight="21px"
+            android:paddingStart="5dp"
+            android:text="Price"
+            android:textColor="#461D8D"
+            android:textSize="18sp"
+
+            />
+
+        <EditText
+            android:id="@+id/edit_text_price_posts"
+            android:layout_width="341dp"
+            android:layout_height="58dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/rectangle_profile_activity"
+            android:padding="8dp"
+            android:selectAllOnFocus="true"
+            tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck"
+            android:inputType="number"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/nunito_bold"
+            android:lineHeight="21px"
+            android:paddingStart="5dp"
+            android:text="Available From"
+            android:textColor="#461D8D"
+            android:textSize="18sp"
+
+
+            />
+
+        <EditText
+            android:id="@+id/edit_text_available_from_posts"
+            android:layout_width="341dp"
+            android:layout_height="58dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/rectangle_profile_activity"
+            android:padding="8dp"
+            android:selectAllOnFocus="true"
+            tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck"
+            android:inputType="date"/>
+
+        <TextView
+            android:id="@+id/photos"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/photos_background"
+            android:fontFamily="@font/nunito_semibold"
+            android:paddingStart="25dp"
+            android:paddingTop="7dp"
+            android:text="Photos"
+            android:textColor="#461D8D"
+            android:textSize="19sp"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <ImageView
+            android:id="@+id/add_photo_posts"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="27dp"
+            android:layout_marginTop="5dp"
+            android:src="@drawable/add_photo_icon_postsdd" />
+
+        <TextView
+            android:id="@+id/summery"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/summery"
+            android:fontFamily="@font/nunito_semibold"
+
+            android:paddingStart="25dp"
+            android:text="Summery"
+            android:textColor="#461D8D"
+            android:textSize="19sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/nunito_bold"
+            android:lineHeight="21px"
+            android:paddingStart="5dp"
+            android:text="AD Title"
+            android:textColor="#461D8D"
+            android:textSize="18sp"
+
+            />
+
+        <EditText
+            android:id="@+id/edit_text_ad_title_posts"
+            android:layout_width="341dp"
+            android:layout_height="58dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/rectangle_profile_activity"
+            android:padding="8dp"
+            android:selectAllOnFocus="true"
+            tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/nunito_bold"
+            android:lineHeight="21px"
+            android:paddingStart="5dp"
+            android:text="AD Description"
+            android:textColor="#461D8D"
+            android:textSize="18sp"
+
+            />
+
+        <EditText
+            android:id="@+id/edit_text_ad_desc_posts"
+            android:layout_width="341dp"
+            android:layout_height="58dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/rectangle_profile_activity"
+            android:padding="8dp"
+            android:selectAllOnFocus="true"
+            tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
+            android:background="@drawable/last_text_posts"
+            android:fontFamily="@font/nunito"
+            android:text="Include Information about the property ,outdoor spaces, local areas, Land marks ,community .. no Personal info"
+            android:textSize="16sp"
+            android:layout_margin="8dp"/>
+
+
+    </LinearLayout>
+</ScrollView>
