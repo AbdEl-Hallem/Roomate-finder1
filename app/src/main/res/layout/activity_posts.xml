@@ -799,7 +799,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="27dp"
             android:layout_marginTop="5dp"
-            android:src="@drawable/add_photo_icon_postsdd" />
+            android:src="@drawable/add_photo_icon_posts" />
 
         <TextView
             android:id="@+id/summery"
