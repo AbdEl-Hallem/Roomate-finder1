@@ -709,7 +709,6 @@
             tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
 
         <TextView
-            android:id="@+id/size"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/furnishing_background"
