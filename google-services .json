@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "141171843432",
+    "firebase_url": "https://roommate-finder-f3643-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "roommate-finder-f3643",
+    "storage_bucket": "roommate-finder-f3643.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:141171843432:android:5e9c6622f6988071fd76dd",
+        "android_client_info": {
+          "package_name": "com.example.roommatefinder"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "141171843432-pe17ojc1r21pak1obonnqr1pmf2ovms5.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.roommatefinder",
+            "certificate_hash": "069923b01c6880d24bb943932809e4ba2876f456"
+          }
+        },
+        {
+          "client_id": "141171843432-23hgtdomu89tsffdvghugptsqhppfd2s.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCsZt1RtFsZzetyEVStOPmGBPFi3qhS7B4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "141171843432-23hgtdomu89tsffdvghugptsqhppfd2s.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

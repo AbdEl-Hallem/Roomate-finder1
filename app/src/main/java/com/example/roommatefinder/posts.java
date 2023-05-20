@@ -1,6 +1,7 @@
 package com.example.roommatefinder;
 
 import android.Manifest;
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -11,9 +12,15 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
-import androidx.annotation.Nullable;
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
+import com.google.firebase.storage.UploadTask;
 import com.karumi.dexter.Dexter;
 import com.karumi.dexter.PermissionToken;
 import com.karumi.dexter.listener.PermissionDeniedResponse;
@@ -23,13 +30,15 @@ import com.karumi.dexter.listener.single.PermissionListener;
 
 public class posts extends AppCompatActivity {
 
-    EditText edit_text_price_posts , edit_size , edit_text_no_beds , edit_text_no_baths ,
-             edit_text_no_roommates , edit_text_full_address_posts , edit_text_area_posts ;
+    EditText edit_text_price_posts, edit_size, edit_text_no_beds, edit_text_no_baths,
+            edit_text_no_roommates, edit_text_full_address_posts, edit_text_area_posts;
     Button btn_upload_post;
     ImageView add_photo_posts;
-    Uri Imageuri;
+    Uri ImageUri;
     LinearLayout linearLayout;
-
+    private FirebaseDatabase database;
+    private FirebaseStorage firebaseStorage;
+    ProgressDialog dialog;
 
 
 
@@ -37,6 +46,17 @@ public class posts extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_posts);
+
+        database = FirebaseDatabase.getInstance();
+        firebaseStorage = FirebaseStorage.getInstance();
+        dialog = new ProgressDialog(this);
+        dialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
+        dialog.setMessage("Please wait...");
+        dialog.setCancelable(false);
+        dialog.setTitle("house information upload ");
+        dialog.setCanceledOnTouchOutside(false);
+
+
         edit_text_price_posts = findViewById(R.id.edit_text_price_posts);
         edit_size = findViewById(R.id.edit_size);
         edit_text_no_beds = findViewById(R.id.edit_text_no_beds);
@@ -49,18 +69,72 @@ public class posts extends AppCompatActivity {
         linearLayout = findViewById(R.id.linearLayout_posts);
 
 
-
         add_photo_posts.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 UploadImage();
                 linearLayout.setVisibility(View.VISIBLE);
-                btn_upload_post.setVisibility(View.GONE);
 
             }
         });
 
+        btn_upload_post.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                dialog.show();
 
+                final StorageReference reference = firebaseStorage.getReference().child("house").child(System.currentTimeMillis() + "");
+
+                reference.putFile(ImageUri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+                    @Override
+                    public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+                        reference.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+                            @Override
+                            public void onSuccess(Uri uri) {
+                                projectModel model = new projectModel();
+                                model.setAdd_photo_posts(uri.toString());
+                                model.setEdit_text_full_address_posts(edit_text_full_address_posts.getText().toString());
+
+                                model.setEdit_text_no_baths(edit_text_no_baths.getText().toString());
+
+                                model.setEdit_text_area_posts(edit_text_area_posts.getText().toString());
+
+                                model.setEdit_text_price_posts(edit_text_price_posts.getText().toString());
+
+                                model.setEdit_text_no_beds(edit_text_no_beds.getText().toString());
+
+                                model.setEdit_text_no_roommates(edit_text_no_roommates.getText().toString());
+
+                                model.setEdit_size(edit_size.getText().toString());
+
+                                database.getReference().child("house").push().setValue(model)
+                                        .addOnSuccessListener(new OnSuccessListener<Void>() {
+                                            @Override
+                                            public void onSuccess(Void unused) {
+
+                                                Toast.makeText(posts.this, "House img upload successfully", Toast.LENGTH_SHORT).show();
+                                                dialog.dismiss();
+
+                                            }
+                                        }).addOnFailureListener(new OnFailureListener() {
+                                            @Override
+                                            public void onFailure(@NonNull Exception e) {
+                                                dialog.dismiss();
+
+                                                Toast.makeText(posts.this, "Error occurred", Toast.LENGTH_SHORT).show();
+
+                                            }
+                                        });
+
+
+                            }
+                        });
+                    }
+                });
+
+            }
+        });
 
 
     }
@@ -73,17 +147,16 @@ public class posts extends AppCompatActivity {
                     @Override
                     public void onPermissionGranted(PermissionGrantedResponse permissionGrantedResponse) {
 
-                        Intent intent = new Intent();
+                        Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
                         intent.setType("image/*");
                         intent.setAction(Intent.ACTION_GET_CONTENT);
-                        startActivityForResult(intent , 101);
-
+                        startActivityForResult(Intent.createChooser(intent, "Select images"), 1);
                     }
 
                     @Override
                     public void onPermissionDenied(PermissionDeniedResponse permissionDeniedResponse) {
 
-                        Toast.makeText(posts.this , "Permission Denied" , Toast.LENGTH_SHORT ).show();
+                        Toast.makeText(posts.this, "Permission Denied", Toast.LENGTH_SHORT).show();
 
                     }
 
@@ -98,13 +171,12 @@ public class posts extends AppCompatActivity {
     }
 
     @Override
-    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if (requestCode == 101 && resultCode == RESULT_OK){
-            Imageuri = data.getData();
-            add_photo_posts.setImageURI(Imageuri);
-
-
+        if (requestCode == 1 && resultCode == RESULT_OK) {
+            ImageUri = data.getData();
+            add_photo_posts.setImageURI(ImageUri
+            );
 
         }
 
