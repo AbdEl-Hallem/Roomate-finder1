@@ -31,6 +31,7 @@ android {
         viewBinding true
     }
 
+
 }
 
 dependencies {
@@ -55,6 +56,9 @@ dependencies {
     implementation 'com.github.denzcoskun:ImageSlideshow:0.1.0'
     implementation 'com.karumi:dexter:6.2.3'
     implementation 'com.squareup.picasso:picasso:2.8'
+    implementation 'jp.wasabeef:picasso-transformations:2.4.0'
+
+
 
 
 

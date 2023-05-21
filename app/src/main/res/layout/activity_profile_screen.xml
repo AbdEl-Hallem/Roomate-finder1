@@ -16,7 +16,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingStart="16dp"
-            android:src="@drawable/add_photo_ic"
+            android:background="@drawable/photo_rounddd"
             android:layout_gravity="center"
             />
 
@@ -195,7 +195,7 @@
                 android:layout_marginTop="21dp"
                 android:orientation="vertical">
 
-                <Button
+                <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/button_sportss_interest_fill"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -203,14 +203,14 @@
 
                     />
 
-                <Button
+                <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/button_skating_interest_fill"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="9dp"
                     android:background="@drawable/button_skating_interest_fill" />
 
-                <Button
+                <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/button_foodie_interest_fill"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -219,49 +219,49 @@
 
 
 
-                <Button
+                <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/button_cleaning_interest_fill"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="9dp"
                     android:background="@drawable/button_cleaning_interest_fill" />
 
-                <Button
+                <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/button_learning_interest_fill"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="9dp"
                     android:background="@drawable/button_learning_interest_fill" />
 
-                <Button
+                <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/button_it_interest_fill"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="9dp"
                     android:background="@drawable/button_it_interest_fill" />
 
-                <Button
+                <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/button_nightsout_interest_fill"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="9dp"
                     android:background="@drawable/button_nightsout_interest_fill" />
 
-                <Button
+                <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/button_culture_interest_fill"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="9dp"
                     android:background="@drawable/button_culture_interest_fill" />
 
-                <Button
+                <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/button_gardening_interest_fill"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="9dp"
                     android:background="@drawable/button_gardening_interest_fill" />
 
-                <Button
+                <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/button_photography_interest_fill"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -277,7 +277,7 @@
                 android:orientation="vertical"
                 android:layout_marginTop="21dp"
                 android:layout_marginHorizontal="23dp">
-                <Button
+                <androidx.appcompat.widget.AppCompatButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:background="@drawable/button_music_interest_fill"
@@ -285,7 +285,7 @@
 
 
                     />
-                <Button
+                <androidx.appcompat.widget.AppCompatButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:background="@drawable/button_cooking_interest_fill"
@@ -293,7 +293,7 @@
                     android:layout_marginTop="9dp"
 
                     />
-                <Button
+                <androidx.appcompat.widget.AppCompatButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:background="@drawable/button_vegan_interest_fill"
@@ -301,7 +301,7 @@
                     android:layout_marginTop="9dp"
 
                     />
-                <Button
+                <androidx.appcompat.widget.AppCompatButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:background="@drawable/button_planting_interest_fill"
@@ -309,7 +309,7 @@
                     android:layout_marginTop="9dp"
 
                     />
-                <Button
+                <androidx.appcompat.widget.AppCompatButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:background="@drawable/button_football_interest_fill"
@@ -317,7 +317,7 @@
                     android:layout_marginTop="9dp"
 
                     />
-                <Button
+                <androidx.appcompat.widget.AppCompatButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:background="@drawable/button_chilling_interest_fill"
@@ -325,7 +325,7 @@
                     android:layout_marginTop="9dp"
 
                     />
-                <Button
+                <androidx.appcompat.widget.AppCompatButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:background="@drawable/button_charity_interest_fill"
@@ -333,7 +333,7 @@
                     android:layout_marginTop="9dp"
 
                     />
-                <Button
+                <androidx.appcompat.widget.AppCompatButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:background="@drawable/button_stayhome_interest_fill"
@@ -341,7 +341,7 @@
                     android:layout_marginTop="9dp"
 
                     />
-                <Button
+                <androidx.appcompat.widget.AppCompatButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:background="@drawable/button_art_interest_fill"
@@ -349,7 +349,7 @@
                     android:layout_marginTop="9dp"
 
                     />
-                <Button
+                <androidx.appcompat.widget.AppCompatButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:background="@drawable/button_workingout_interest_fill"
@@ -371,14 +371,14 @@
                 android:layout_marginTop="21dp"
                 android:layout_marginHorizontal="23dp"
                 >
-                <Button
+                <androidx.appcompat.widget.AppCompatButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:background="@drawable/button_fun_interest_fill"
                     android:id="@+id/button_fun_interest_fill"
 
                     />
-                <Button
+                <androidx.appcompat.widget.AppCompatButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:background="@drawable/button_party_interest_fill"
@@ -386,7 +386,7 @@
                     android:layout_marginTop="9dp"
 
                     />
-                <Button
+                <androidx.appcompat.widget.AppCompatButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:background="@drawable/button_gamer_interest_fill"
@@ -394,7 +394,7 @@
                     android:layout_marginTop="9dp"
 
                     />
-                <Button
+                <androidx.appcompat.widget.AppCompatButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:background="@drawable/button_petlover_interest_fill"
@@ -402,7 +402,7 @@
                     android:layout_marginTop="9dp"
 
                     />
-                <Button
+                <androidx.appcompat.widget.AppCompatButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:background="@drawable/button_shopping_interest_fill"
@@ -410,7 +410,7 @@
                     android:layout_marginTop="9dp"
 
                     />
-                <Button
+                <androidx.appcompat.widget.AppCompatButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:background="@drawable/button_reading_interest_fill"
@@ -418,7 +418,7 @@
                     android:layout_marginTop="9dp"
 
                     />
-                <Button
+                <androidx.appcompat.widget.AppCompatButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:background="@drawable/button_social_interest_fill"
@@ -426,7 +426,7 @@
                     android:layout_marginTop="9dp"
 
                     />
-                <Button
+                <androidx.appcompat.widget.AppCompatButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:background="@drawable/button_memes_interest_fill"
@@ -434,7 +434,7 @@
                     android:layout_marginTop="9dp"
 
                     />
-                <Button
+                <androidx.appcompat.widget.AppCompatButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:background="@drawable/button_climate_interest_fill"
@@ -443,7 +443,7 @@
 
                     />
 
-                <Button
+                <androidx.appcompat.widget.AppCompatButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:background="@drawable/button_faith_interest_fill"
@@ -459,7 +459,7 @@
 
 
         </LinearLayout>
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
             android:layout_width="341dp"
             android:layout_height="63dp"
             android:text="Continue"

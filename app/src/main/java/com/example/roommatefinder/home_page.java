@@ -12,6 +12,8 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.FirebaseDatabase;
@@ -21,7 +23,7 @@ import java.util.ArrayList;
 
 public class home_page extends AppCompatActivity {
 
-    TextView uploadPost;
+    BottomNavigationView bottomNavigationView;
     RecyclerView recyclerView ;
     ArrayList<projectModel> recycleList;
     FirebaseDatabase firebaseDatabase ;
@@ -66,13 +68,17 @@ public class home_page extends AppCompatActivity {
         });
 
 
-        uploadPost = findViewById(R.id.post_edittext);
-        uploadPost.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(home_page.this , posts.class);
-                startActivity(intent);
+        bottomNavigationView = findViewById(R.id.bottomNavigationView);
+        bottomNavigationView.setSelectedItemId(R.id.post_add_svg);
+        bottomNavigationView.setOnItemSelectedListener(item -> {
+            switch (item.getItemId()) {
+                case R.id.post_add_svg:
+                    startActivity(new Intent(getApplicationContext(), posts.class));
+                    finish();
+                    return true;
+
             }
+return false;
         });
 
     }

@@ -1,20 +1,27 @@
 package com.example.roommatefinder;
 
 import android.content.Context;
+import android.os.Build;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+
 import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
+import jp.wasabeef.picasso.transformations.RoundedCornersTransformation;
+
+
 public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHolder> {
+
 
     ArrayList<projectModel> list;
     Context context;
@@ -32,19 +39,20 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
         return new ViewHolder(view);
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.S)
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-
         projectModel model = list.get(position);
+        RoundedCornersTransformation transformation = new RoundedCornersTransformation(40, 0);
 
-        Picasso.get().load(model.getAdd_photo_posts()).placeholder(R.drawable.a).into(holder.image_post);
-        holder.size.setText(model.getEdit_size());
+        Picasso.get().load(model.getAdd_photo_posts()).transform(transformation).fit().placeholder(R.drawable.img_card).into(holder.image_post);
+        holder.size.setText(model.getEdit_size()+" Size");
         holder.area.setText(model.getEdit_text_area_posts());
         holder.full_adress.setText(model.getEdit_text_full_address_posts());
-        holder.baths.setText(model.getEdit_text_no_baths());
-        holder.beds.setText(model.getEdit_text_no_beds());
-        holder.no_of_roommates.setText(model.getEdit_text_no_roommates());
-        holder.item_posts.setText(model.getEdit_text_price_posts());
+        holder.baths.setText(model.getEdit_text_no_baths() +" baths");
+        holder.beds.setText(model.getEdit_text_no_beds()+ " beds");
+        holder.no_of_roommates.setText(model.getEdit_text_no_roommates()+ " mates");
+        holder.item_posts.setText(model.getEdit_text_price_posts()+" price");
 
 
     }
