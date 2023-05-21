@@ -46,7 +46,6 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
         RoundedCornersTransformation transformation = new RoundedCornersTransformation(40, 0);
 
         Picasso.get().load(model.getAdd_photo_posts()).transform(transformation).fit().placeholder(R.drawable.img_card).into(holder.image_post);
-        Picasso.get().load(model.getAdd_photo()).placeholder(R.drawable.round_img).into(holder.profile_img);
 
         holder.size.setText(model.getEdit_size()+" Size");
         holder.area.setText(model.getEdit_text_area_posts());
@@ -55,7 +54,6 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
         holder.beds.setText(model.getEdit_text_no_beds()+ " beds");
         holder.no_of_roommates.setText(model.getEdit_text_no_roommates()+ " mates");
         holder.item_posts.setText(model.getEdit_text_price_posts()+" price");
-        holder.first_name.setText(model.getEdit_text_first_name_fill_information());
 
 
 
@@ -90,8 +88,6 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
             full_adress = itemView.findViewById(R.id.full_adress);
             area = itemView.findViewById(R.id.area);
             image_post = itemView.findViewById(R.id.image_post);
-            first_name = itemView.findViewById(R.id.name);
-            profile_img = itemView.findViewById(R.id.profile_image);
         }
     }
 

@@ -67,7 +67,7 @@ public class posts extends AppCompatActivity {
         btn_upload_post = findViewById(R.id.btn_upload_post);
         add_photo_posts = findViewById(R.id.add_photo_posts);
         linearLayout = findViewById(R.id.linearLayout_posts);
-
+    
 
         add_photo_posts.setOnClickListener(new View.OnClickListener() {
             @Override

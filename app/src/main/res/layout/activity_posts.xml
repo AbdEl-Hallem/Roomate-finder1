@@ -872,7 +872,6 @@
             android:textColor="#461D8D"
             android:textSize="19sp"
             app:layout_constraintStart_toStartOf="parent" />
-
         <ImageView
             android:id="@+id/add_photo_posts"
             android:layout_width="match_parent"
