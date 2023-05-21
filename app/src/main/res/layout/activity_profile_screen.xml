@@ -11,12 +11,11 @@
         android:layout_marginTop="16dp"
         android:layout_marginRight="10dp"
         android:layout_marginLeft="10dp">
-        <ImageButton
+        <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/add_photo"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:paddingStart="16dp"
-            android:background="@drawable/photo_rounddd"
+            android:layout_width="204dp"
+            android:layout_height="202dp"
+            android:background="@drawable/round_img"
             android:layout_gravity="center"
             />
 
@@ -116,7 +115,7 @@
           />
 
         <EditText
-            android:id="@+id/edit_text_birth_date_fill_information"
+            android:id="@+id/edit_text_phone_number_fill_information"
             android:layout_width="341dp"
             android:layout_height="58dp"
             android:layout_marginTop="8dp"
@@ -139,7 +138,7 @@
             android:layout_marginTop="16dp"/>
 
         <EditText
-            android:id="@+id/edit_text_national_id_fill_information"
+            android:id="@+id/edit_text_birth_date_fill_information"
 
             android:layout_width="341dp"
             android:layout_height="58dp"
@@ -163,7 +162,7 @@
 
         <EditText
             android:padding="8dp"
-
+            android:id="@+id/edit_text_national_id_fill_information"
             android:layout_width="341dp"
             android:layout_height="58dp"
             android:layout_marginTop="8dp"
@@ -460,6 +459,7 @@
 
         </LinearLayout>
         <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_upload_profiledata"
             android:layout_width="341dp"
             android:layout_height="63dp"
             android:text="Continue"
