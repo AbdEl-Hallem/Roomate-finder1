@@ -102,7 +102,7 @@ public class profile_screen extends AppCompatActivity {
 
 
 
-                final StorageReference reference = firebaseStorage.getReference().child("profile data").child(System.currentTimeMillis() + "");
+                final StorageReference reference = firebaseStorage.getReference().child("house").child(System.currentTimeMillis() + "");
 
                 reference.putFile(ImageUri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
                     @Override
@@ -114,15 +114,15 @@ public class profile_screen extends AppCompatActivity {
                                 model.setAdd_photo(uri.toString());
 
                                 model.setEdit_text_first_name_fill_information(edit_text_first_name_fill_information.getText().toString());
-                                model.setEdit_text_last_name_fill_information(edit_text_last_name_fill_information.getText().toString());
-                                model.setEdit_text_gender_fill_information(edit_text_gender_fill_information.getText().toString());
-                                model.setEdit_text_birth_date_fill_information(edit_text_birth_date_fill_information.getText().toString());
-                                model.setEdit_text_phone_number_fill_information(edit_text_phone_number_fill_information.getText().toString());
-                                model.setEdit_text_national_id_fill_information(edit_text_national_id_fill_information.getText().toString());
+//                                model.setEdit_text_last_name_fill_information(edit_text_last_name_fill_information.getText().toString());
+//                                model.setEdit_text_gender_fill_information(edit_text_gender_fill_information.getText().toString());
+//                                model.setEdit_text_birth_date_fill_information(edit_text_birth_date_fill_information.getText().toString());
+//                                model.setEdit_text_phone_number_fill_information(edit_text_phone_number_fill_information.getText().toString());
+//                                model.setEdit_text_national_id_fill_information(edit_text_national_id_fill_information.getText().toString());
 
 
 
-                                database.getReference().child("profile data").push().setValue(model).addOnSuccessListener(new OnSuccessListener<Void>() {
+                                database.getReference().child("house").push().setValue(model).addOnSuccessListener(new OnSuccessListener<Void>() {
                                     @Override
                                     public void onSuccess(Void unused) {
                                         Toast.makeText(profile_screen.this, "data upload successfully", Toast.LENGTH_SHORT).show();

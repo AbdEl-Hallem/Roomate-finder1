@@ -55,7 +55,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
         holder.beds.setText(model.getEdit_text_no_beds()+ " beds");
         holder.no_of_roommates.setText(model.getEdit_text_no_roommates()+ " mates");
         holder.item_posts.setText(model.getEdit_text_price_posts()+" price");
-        holder.first_name.setText(model.getEdit_text_first_name_fill_information() +"ahmed");
+        holder.first_name.setText(model.getEdit_text_first_name_fill_information());
 
 
 
