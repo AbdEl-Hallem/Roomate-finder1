@@ -7,14 +7,14 @@
     android:contentDescription="postss">
 
     <LinearLayout
-        android:id="@+id/linearLayout_posts"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
         android:contentDescription="posts"
         android:orientation="vertical"
-        tools:context=".posts">
+        tools:context=".posts"
+        >
 
 
         <ImageView
@@ -22,7 +22,8 @@
             android:layout_width="360dp"
             android:layout_height="90dp"
             android:layout_gravity="center_horizontal"
-            android:src="@drawable/top_img" />
+            android:src="@drawable/top_img"
+            />
 
         <TextView
 
@@ -43,85 +44,85 @@
 
 
             />
-
         <androidx.cardview.widget.CardView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:backgroundTint="#F7EFFE">
-
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
 
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+                <TextView
+                    android:id="@+id/house_textview"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:drawableStart="@drawable/ph_house_line_bold"
+                    android:fontFamily="@font/nunito_semibold"
+                    android:text="House"
+                    android:textColor="#9747FF"
+                    android:textSize="20sp"
+                    android:drawablePadding="16dp"
+                    />
+                <TextView
+                    android:id="@+id/apartment_textview"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:drawableStart="@drawable/apartment"
+                    android:fontFamily="@font/nunito_semibold"
+                    android:text="Apartment"
+                    android:textColor="#9747FF"
+                    android:textSize="20sp"
+                    android:drawablePadding="16dp"
+                    />
+                <TextView
+                    android:id="@+id/villa_textview"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:drawableStart="@drawable/villa"
+                    android:fontFamily="@font/nunito_semibold"
+                    android:text="Villa"
+                    android:textColor="#9747FF"
+                    android:textSize="20sp"
+                    android:drawablePadding="16dp"
+                    />
+
+                <TextView
+                    android:id="@+id/other_amenities_textview"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:drawableStart="@drawable/other"
+                    android:fontFamily="@font/nunito_semibold"
+                    android:text="Other"
+                    android:textColor="#9747FF"
+                    android:textSize="20sp"
+                    android:drawablePadding="16dp"
+                    />
+
+
+
+            </LinearLayout>
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:id="@+id/house_textview"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-
-                        android:drawableStart="@drawable/ph_house_line_bold"
-                        android:drawablePadding="16dp"
-                        android:fontFamily="@font/nunito_semibold"
-                        android:text="House"
-                        android:textColor="#9747FF"
-                        android:textSize="20sp" />
-
-                    <TextView
-                        android:id="@+id/apartment_textview"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-
-                        android:drawableStart="@drawable/apartment"
-                        android:drawablePadding="16dp"
-                        android:fontFamily="@font/nunito_semibold"
-                        android:text="Apartment"
-                        android:textColor="#9747FF"
-                        android:textSize="20sp" />
-
-                    <TextView
-                        android:id="@+id/villa_textview"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-
-                        android:drawableStart="@drawable/villa"
-                        android:drawablePadding="16dp"
-                        android:fontFamily="@font/nunito_semibold"
-                        android:text="Villa"
-                        android:textColor="#9747FF"
-                        android:textSize="20sp" />
-
-                    <TextView
-                        android:id="@+id/other_amenities_textview"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-
-                        android:drawableStart="@drawable/other"
-                        android:drawablePadding="16dp"
-                        android:fontFamily="@font/nunito_semibold"
-                        android:text="Other"
-                        android:textColor="#9747FF"
-                        android:textSize="20sp" />
-
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
                     android:orientation="vertical"
-                    android:paddingStart="205dp">
-
+                    android:layout_gravity="center"
+                    android:paddingStart="205dp"
+                    >
                     <RadioGroup
                         android:id="@+id/property_type_radiogroup"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="8dp">
+                        android:layout_marginTop="8dp"
+                        >
 
                         <RadioButton
                             android:id="@+id/house_radiobutton"
@@ -153,7 +154,6 @@
                             android:textColor="#9747FF"
                             android:textSize="20sp"
                             tools:ignore="TouchTargetSizeCheck" />
-
                         <RadioButton
                             android:id="@+id/other_amenities_radiobutton"
                             android:layout_width="wrap_content"
@@ -165,12 +165,18 @@
                             tools:ignore="TouchTargetSizeCheck" />
 
 
+
+
+
+
                     </RadioGroup>
                 </LinearLayout>
 
             </LinearLayout>
 
         </androidx.cardview.widget.CardView>
+
+
 
 
         <TextView
@@ -195,125 +201,121 @@
             android:backgroundTint="#F7EFFE"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/amenities">
-
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
-
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
-
                     <TextView
                         android:id="@+id/garage_textview"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:drawableStart="@drawable/garage"
-                        android:drawablePadding="16dp"
                         android:fontFamily="@font/nunito_semibold"
                         android:text="Garage"
                         android:textColor="#9747FF"
-                        android:textSize="20sp" />
-
+                        android:textSize="20sp"
+                        android:drawablePadding="16dp"
+                        />
                     <TextView
                         android:id="@+id/parking_textview"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
 
                         android:drawableStart="@drawable/parking"
-                        android:drawablePadding="16dp"
                         android:fontFamily="@font/nunito_semibold"
                         android:text="Parking"
                         android:textColor="#9747FF"
-                        android:textSize="20sp" />
-
+                        android:textSize="20sp"
+                        android:drawablePadding="16dp"
+                        />
                     <TextView
                         android:id="@+id/internet_textview"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
 
                         android:drawableStart="@drawable/internet"
-                        android:drawablePadding="16dp"
                         android:fontFamily="@font/nunito_semibold"
                         android:text="Internet"
                         android:textColor="#9747FF"
-                        android:textSize="20sp" />
-
+                        android:textSize="20sp"
+                        android:drawablePadding="16dp"
+                        />
                     <TextView
                         android:id="@+id/balacony_textview"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
 
                         android:drawableStart="@drawable/balacony"
-                        android:drawablePadding="16dp"
                         android:fontFamily="@font/nunito_semibold"
                         android:text="Balcony|Terrace"
                         android:textColor="#9747FF"
-                        android:textSize="20sp" />
-
+                        android:textSize="20sp"
+                        android:drawablePadding="16dp"
+                        />
                     <TextView
                         android:id="@+id/garden_textview"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
 
                         android:drawableStart="@drawable/garden"
-                        android:drawablePadding="16dp"
                         android:fontFamily="@font/nunito_semibold"
                         android:text="Garden|Yard"
                         android:textColor="#9747FF"
-                        android:textSize="20sp" />
-
+                        android:textSize="20sp"
+                        android:drawablePadding="16dp"
+                        />
                     <TextView
                         android:id="@+id/workingout_textview"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
 
                         android:drawableStart="@drawable/workingout"
-                        android:drawablePadding="16dp"
                         android:fontFamily="@font/nunito_semibold"
                         android:text="Workout Facilities"
                         android:textColor="#9747FF"
-                        android:textSize="20sp" />
-
+                        android:textSize="20sp"
+                        android:drawablePadding="16dp"
+                        />
                     <TextView
                         android:id="@+id/security_textview"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
 
                         android:drawableStart="@drawable/security"
-                        android:drawablePadding="16dp"
                         android:fontFamily="@font/nunito_semibold"
                         android:text="Securities"
                         android:textColor="#9747FF"
-                        android:textSize="20sp" />
-
+                        android:textSize="20sp"
+                        android:drawablePadding="16dp"
+                        />
                     <TextView
                         android:id="@+id/pets_textview"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
 
                         android:drawableStart="@drawable/pets"
-                        android:drawablePadding="16dp"
                         android:fontFamily="@font/nunito_semibold"
                         android:text="Pets Allowed"
                         android:textColor="#9747FF"
-                        android:textSize="20sp" />
+                        android:textSize="20sp"
+                        android:drawablePadding="16dp"
+                        />
 
                 </LinearLayout>
-
                 <LinearLayout
+                    android:paddingTop="9dp"
+                    android:layout_gravity="center"
+                    android:paddingStart="140dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center"
                     android:orientation="vertical"
-                    android:paddingStart="140dp"
-                    android:paddingTop="9dp"
 
 
                     >
-
                     <CheckBox
                         android:id="@+id/garage_checkbox"
                         android:layout_width="wrap_content"
@@ -340,7 +342,6 @@
                         android:textColor="#9747FF"
                         android:textSize="20sp"
                         tools:ignore="TouchTargetSizeCheck" />
-
                     <CheckBox
                         android:id="@+id/balacony_checkbox"
                         android:layout_width="wrap_content"
@@ -349,7 +350,6 @@
                         android:textColor="#9747FF"
                         android:textSize="20sp"
                         tools:ignore="TouchTargetSizeCheck" />
-
                     <CheckBox
                         android:id="@+id/garden_checkbox"
                         android:layout_width="wrap_content"
@@ -358,7 +358,6 @@
                         android:textColor="#9747FF"
                         android:textSize="20sp"
                         tools:ignore="TouchTargetSizeCheck" />
-
                     <CheckBox
                         android:id="@+id/workingout_checkbox"
                         android:layout_width="wrap_content"
@@ -367,7 +366,6 @@
                         android:textColor="#9747FF"
                         android:textSize="20sp"
                         tools:ignore="TouchTargetSizeCheck" />
-
                     <CheckBox
                         android:id="@+id/securities_checkbox"
                         android:layout_width="wrap_content"
@@ -376,7 +374,6 @@
                         android:textColor="#9747FF"
                         android:textSize="20sp"
                         tools:ignore="TouchTargetSizeCheck" />
-
                     <CheckBox
                         android:id="@+id/pets_checkbox"
                         android:layout_width="wrap_content"
@@ -387,9 +384,11 @@
                         tools:ignore="TouchTargetSizeCheck" />
 
 
+
                 </LinearLayout>
 
             </LinearLayout>
+
 
 
         </androidx.cardview.widget.CardView>
@@ -416,79 +415,80 @@
             android:backgroundTint="#F7EFFE"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/furnishing">
-
             <LinearLayout
 
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
-
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
-
                     <TextView
                         android:id="@+id/furnishing_textview"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:drawableStart="@drawable/furniture"
-                        android:drawablePadding="16dp"
                         android:fontFamily="@font/nunito_semibold"
                         android:text="Furnished"
                         android:textColor="#9747FF"
-                        android:textSize="20sp" />
-
+                        android:textSize="20sp"
+                        android:drawablePadding="16dp"
+                        />
                     <TextView
                         android:id="@+id/notfurnishing_textview"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:drawableStart="@drawable/furniture"
-                        android:drawablePadding="16dp"
                         android:fontFamily="@font/nunito_semibold"
                         android:text="Not Furnished"
                         android:textColor="#9747FF"
-                        android:textSize="20sp" />
+                        android:textSize="20sp"
+                        android:drawablePadding="16dp"
+                        />
 
                 </LinearLayout>
-
-                <LinearLayout
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_gravity="center"
+                android:paddingStart="180dp">
+                <RadioGroup
+                    android:id="@+id/furnishing_radiogroup"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:orientation="vertical"
-                    android:paddingStart="180dp">
+                    android:layout_marginTop="8dp"
+                    >
+                <RadioButton
+                    android:id="@+id/furnished_radiobutton"
 
-                    <RadioGroup
-                        android:id="@+id/furnishing_radiogroup"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="8dp">
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:button="@drawable/checkbox"
 
-                        <RadioButton
-                            android:id="@+id/furnished_radiobutton"
+                    android:textColor="#9747FF"
+                    android:textSize="20sp"
+                    tools:ignore="TouchTargetSizeCheck" />
 
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:button="@drawable/checkbox"
+                <RadioButton
+                    android:id="@+id/notfurnished_radiobutton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
 
-                            android:textColor="#9747FF"
-                            android:textSize="20sp"
-                            tools:ignore="TouchTargetSizeCheck" />
-
-                        <RadioButton
-                            android:id="@+id/notfurnished_radiobutton"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-
-                            android:button="@drawable/checkbox"
-                            android:textColor="#9747FF"
-                            android:textSize="20sp"
-                            tools:ignore="TouchTargetSizeCheck" />
-                    </RadioGroup>
+                    android:button="@drawable/checkbox"
+                    android:textColor="#9747FF"
+                    android:textSize="20sp"
+                    tools:ignore="TouchTargetSizeCheck" />
+                </RadioGroup>
 
 
-                </LinearLayout>
+
+
+
+
+
+            </LinearLayout>
             </LinearLayout>
 
 
@@ -516,49 +516,47 @@
             android:backgroundTint="#F7EFFE"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/furnishing">
-
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
-
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
-
                     <TextView
                         android:id="@+id/washingmachine_textview"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:drawableStart="@drawable/washingmachine"
-                        android:drawablePadding="16dp"
                         android:fontFamily="@font/nunito_semibold"
                         android:text="Washing Machine"
                         android:textColor="#9747FF"
-                        android:textSize="20sp" />
-
+                        android:textSize="20sp"
+                        android:drawablePadding="16dp"
+                        />
                     <TextView
                         android:id="@+id/tv_textview"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:drawableStart="@drawable/tv"
-                        android:drawablePadding="16dp"
                         android:fontFamily="@font/nunito_semibold"
                         android:text="TV Unit"
                         android:textColor="#9747FF"
-                        android:textSize="20sp" />
-
+                        android:textSize="20sp"
+                        android:drawablePadding="16dp"
+                        />
                     <TextView
                         android:id="@+id/airconditioner_textview"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:drawableStart="@drawable/tv"
-                        android:drawablePadding="16dp"
                         android:fontFamily="@font/nunito_semibold"
                         android:text="Air Conditioning"
                         android:textColor="#9747FF"
-                        android:textSize="20sp" />
+                        android:textSize="20sp"
+                        android:drawablePadding="16dp"
+                        />
 
                     <TextView
                         android:id="@+id/otherappliance_textview"
@@ -572,14 +570,12 @@
                         android:textSize="20sp" />
 
                 </LinearLayout>
-
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="right"
                     android:orientation="vertical"
+                    android:layout_gravity="right"
                     android:paddingStart="151dp">
-
                     <CheckBox
                         android:id="@+id/washingmachine_checkbox"
                         android:layout_width="wrap_content"
@@ -589,7 +585,6 @@
                         android:textColor="#9747FF"
                         android:textSize="20sp"
                         tools:ignore="TouchTargetSizeCheck" />
-
                     <CheckBox
                         android:id="@+id/tv_checkbox"
                         android:layout_width="wrap_content"
@@ -599,7 +594,6 @@
                         android:textColor="#9747FF"
                         android:textSize="20sp"
                         tools:ignore="TouchTargetSizeCheck" />
-
                     <CheckBox
                         android:id="@+id/airconditioner_checkbox"
                         android:layout_width="wrap_content"
@@ -609,7 +603,6 @@
                         android:textColor="#9747FF"
                         android:textSize="20sp"
                         tools:ignore="TouchTargetSizeCheck" />
-
                     <CheckBox
                         android:id="@+id/other_checkbox"
                         android:layout_width="wrap_content"
@@ -621,8 +614,16 @@
                         tools:ignore="TouchTargetSizeCheck" />
 
 
+
+
+
+
+
+
+
                 </LinearLayout>
             </LinearLayout>
+
 
 
         </androidx.cardview.widget.CardView>
@@ -635,7 +636,7 @@
             android:fontFamily="@font/nunito_semibold"
             android:paddingStart="15dp"
             android:paddingTop="7dp"
-            android:text="Numnber OF Bed Rooms"
+            android:text="Numnber Of Bedrooms"
             android:textColor="#461D8D"
             android:textSize="19sp"
             app:layout_constraintStart_toStartOf="parent"
@@ -651,8 +652,7 @@
             android:inputType="number"
             android:padding="8dp"
             android:selectAllOnFocus="true"
-
-            tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
+            tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
         <TextView
             android:id="@+id/nu_of_baths"
@@ -662,7 +662,7 @@
             android:fontFamily="@font/nunito_semibold"
             android:paddingStart="15dp"
             android:paddingTop="7dp"
-            android:text="Numnber OF baths"
+            android:text="Numnber Of Bathrooms"
             android:textColor="#461D8D"
             android:textSize="19sp"
             app:layout_constraintStart_toStartOf="parent"
@@ -678,9 +678,7 @@
             android:inputType="number"
             android:padding="8dp"
             android:selectAllOnFocus="true"
-
-            tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
-
+            tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck,TouchTargetSizeCheck" />
         <TextView
             android:id="@+id/nu_of_roommates"
             android:layout_width="wrap_content"
@@ -689,7 +687,7 @@
             android:fontFamily="@font/nunito_semibold"
             android:paddingStart="15dp"
             android:paddingTop="7dp"
-            android:text="Numnber OF rommates"
+            android:text="Numnber Of Roommates"
             android:textColor="#461D8D"
             android:textSize="19sp"
             app:layout_constraintStart_toStartOf="parent"
@@ -706,9 +704,9 @@
             android:padding="8dp"
             android:selectAllOnFocus="true"
 
-            tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
-
+            tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck,TouchTargetSizeCheck" />
         <TextView
+            android:id="@+id/size"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/furnishing_background"
@@ -730,10 +728,12 @@
             android:layout_marginTop="8dp"
             android:background="@drawable/rectangle_profile_activity"
             android:inputType="number"
+            android:minHeight="48dp"
             android:padding="8dp"
-            android:selectAllOnFocus="true"
 
+            android:selectAllOnFocus="true"
             tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
+
 
         <TextView
             android:id="@+id/property_address"
@@ -829,10 +829,11 @@
             android:layout_height="58dp"
             android:layout_marginTop="8dp"
             android:background="@drawable/rectangle_profile_activity"
-            android:inputType="number"
             android:padding="8dp"
             android:selectAllOnFocus="true"
-            tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
+            tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck"
+            android:inputType="number"
+            />
 
         <TextView
             android:layout_width="wrap_content"
@@ -854,11 +855,10 @@
             android:layout_height="58dp"
             android:layout_marginTop="8dp"
             android:background="@drawable/rectangle_profile_activity"
-            android:inputType="date"
             android:padding="8dp"
             android:selectAllOnFocus="true"
-            tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
-
+            tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck"
+            android:inputType="date"/>
 
         <TextView
             android:id="@+id/photos"
@@ -872,13 +872,36 @@
             android:textColor="#461D8D"
             android:textSize="19sp"
             app:layout_constraintStart_toStartOf="parent" />
+
         <ImageView
             android:id="@+id/add_photo_posts"
-            android:layout_width="match_parent"
+            android:layout_margin="8dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:iss_auto_cycle="false"
+            android:background="@drawable/add_photo_icon_posts"
+            android:layout_gravity="center_horizontal"/>
 
-            android:src="@drawable/add_photo_icon_posts" />
+
+
+<!--        <Button-->
+
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="Add Photos"-->
+<!--            android:id="@+id/add_photo_postsss"-->
+<!--            android:layout_gravity="center_horizontal"-->
+<!--            android:gravity="center_horizontal|center_vertical"-->
+<!--            android:layout_marginBottom="8dp"-->
+<!--            android:background="#B064F4"-->
+<!--            android:fontFamily="@font/nunito_bold"-->
+<!--            android:textColor="@color/white"-->
+<!--            android:textAllCaps="false"-->
+
+<!--            />-->
+
+
+
+
 
         <TextView
             android:id="@+id/summery"
@@ -941,29 +964,24 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="8dp"
             android:layout_marginTop="3dp"
             android:background="@drawable/last_text_posts"
             android:fontFamily="@font/nunito"
             android:text="Include Information about the property ,outdoor spaces, local areas, Land marks ,community .. no Personal info"
-            android:textSize="16sp" />
+            android:textSize="16sp"
+            android:layout_margin="8dp"/>
 
         <Button
             android:id="@+id/btn_upload_post"
-            style="@style/Widget.AppCompat.Button"
-            android:layout_width="317dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="32dp"
+            android:layout_margin="16dp"
             android:background="@drawable/pink_button"
             android:fontFamily="@font/nunito_bold"
-            android:text="Next"
-            android:textAllCaps="false"
-            android:textColor="#ffffff"
-            android:textSize="20sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView" />
+            android:gravity="center_horizontal|center"
+            android:text="Post"
+            android:textColor="@color/white"
+            android:textSize="20sp" />
 
 
     </LinearLayout>

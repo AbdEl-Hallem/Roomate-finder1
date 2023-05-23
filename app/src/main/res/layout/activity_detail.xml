@@ -11,76 +11,82 @@
     android:layout_height="match_parent"
     tools:context=".detailActivity"
     android:orientation="vertical">
-    <com.denzcoskun.imageslider.ImageSlider
+    <ImageView
         android:layout_width="match_parent"
         android:layout_height="220dp"
         android:textAlignment="center"
         android:id="@+id/imageslider"
         app:iss_auto_cycle="false"
         />
+
     <TextView
-        android:textColor="#461D8D"
-        android:layout_marginTop="8dp"
+        android:id="@+id/full_adress"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Full adress"
         android:layout_marginLeft="16dp"
+        android:layout_marginTop="8dp"
         android:fontFamily="@font/nunito_bold"
-        android:textSize="20sp"
+        android:text="Full adress"
+        android:textColor="#461D8D"
 
-        />
+        android:textSize="20sp" />
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
+        android:weightSum="4"
 
         android:gravity="center"
         >
+
         <TextView
+            android:id="@+id/size"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Size"
             android:layout_marginStart="10dp"
-            android:padding="8dp"
             android:drawableStart="@drawable/measurment_svg"
             android:drawablePadding="4dp"
+            android:padding="8dp"
 
 
-            />
+            android:text="Size" />
+
         <TextView
+            android:id="@+id/baths"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="baths"
             android:layout_marginStart="10dp"
-            android:padding="8dp"
             android:drawableStart="@drawable/shower_svg"
             android:drawablePadding="4dp"
+            android:padding="8dp"
 
 
-            />
+            android:text="baths" />
+
         <TextView
+            android:id="@+id/beds"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="beds"
             android:layout_marginStart="10dp"
-            android:padding="8dp"
             android:drawableStart="@drawable/bedroom_svg"
             android:drawablePadding="4dp"
+            android:padding="8dp"
 
 
-            />
+            android:text="beds" />
+
         <TextView
+            android:id="@+id/roommates"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Roommates"
             android:layout_marginStart="10dp"
 
-            android:padding="8dp"
             android:drawableStart="@drawable/user_svg"
             android:drawablePadding="4dp"
+            android:padding="8dp"
 
 
-            />
+            android:text="Roommates" />
 
 
 
@@ -95,14 +101,16 @@
         android:textSize="15sp"
         android:textColor="#461D8D"
         android:layout_marginBottom="8dp"/>
+
     <TextView
+        android:id="@+id/description"
         android:layout_width="match_parent"
         android:layout_height="150dp"
-        android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras eu semper velit. Nam tempor gravida libero, a gravida odio dapibus at. Donec sagittis neque lacus, vel posuere tortor volutpat et. Nulla ut tempor arcu. Quisque id sapien at augue elementum consequat. Vestibulum ac consequat quam."
         android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp"
         android:fontFamily="@font/nunito"
-        android:textSize="14sp"/>
+        android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras eu semper velit. Nam tempor gravida libero, a gravida odio dapibus at. Donec sagittis neque lacus, vel posuere tortor volutpat et. Nulla ut tempor arcu. Quisque id sapien at augue elementum consequat. Vestibulum ac consequat quam."
+        android:textSize="14sp" />
     <View
         android:layout_width="match_parent"
         android:layout_height="1dp"
@@ -118,26 +126,29 @@
         android:gravity="center"
         android:weightSum="3"
         >
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Available from : "
-            android:layout_marginLeft="16dp"
-            android:fontFamily="@font/nunito"
-            android:textSize="16sp"
-            android:layout_weight="1"
-            android:textColor="#461D8D"
-            android:padding="4dp"
-            />
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Price"
-            android:layout_weight="2"
-            android:textSize="16sp"
-            android:padding="4dp"
 
-            android:textColor="#461D8D"/>
+        <TextView
+            android:id="@+id/date"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_weight="1"
+            android:fontFamily="@font/nunito"
+            android:padding="4dp"
+            android:text="Available from : "
+            android:textColor="#461D8D"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/price"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:padding="4dp"
+            android:text="Price"
+
+            android:textColor="#461D8D"
+            android:textSize="16sp" />
 
 
 
@@ -164,19 +175,19 @@
         android:padding="4dp"
         />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="House"
-            android:layout_marginLeft="16dp"
-            android:textSize="20sp"
-            android:fontFamily="@font/nunito"
-            android:textColor="#9747FF"
-            android:drawableStart="@drawable/house"
-            android:padding="8dp"
-            android:drawablePadding="8dp"
+    <TextView
+        android:id="@+id/amenties"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:drawableStart="@drawable/house"
+        android:drawablePadding="8dp"
+        android:fontFamily="@font/nunito"
+        android:padding="8dp"
+        android:text="House"
+        android:textColor="#9747FF"
 
-            />
+        android:textSize="20sp" />
 
 
     <View

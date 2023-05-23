@@ -7,6 +7,187 @@ public class projectModel {
     edit_text_phone_number_fill_information , edit_text_birth_date_fill_information , edit_text_national_id_fill_information;
     private String add_photo;
     private String add_photo_posts;
+    private String date;
+    private String propertytype;
+    private String adtitle;
+    private String addesc;
+
+    public projectModel(String date, String adtitle, String addesc) {
+        this.date = date;
+        this.adtitle = adtitle;
+        this.addesc = addesc;
+    }
+
+    private String furinture;
+    private String garage;
+
+    public String getDate() {
+        return date;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
+    }
+
+    public String getPropertytype() {
+        return propertytype;
+    }
+
+    public void setPropertytype(String propertytype) {
+        this.propertytype = propertytype;
+    }
+
+    public String getAdtitle() {
+        return adtitle;
+    }
+
+    public void setAdtitle(String adtitle) {
+        this.adtitle = adtitle;
+    }
+
+    public String getAddesc() {
+        return addesc;
+    }
+
+    public void setAddesc(String addesc) {
+        this.addesc = addesc;
+    }
+
+    public String getFurinture() {
+        return furinture;
+    }
+
+    public void setFurinture(String furinture) {
+        this.furinture = furinture;
+    }
+
+    public String getGarage() {
+        return garage;
+    }
+
+    public void setGarage(String garage) {
+        this.garage = garage;
+    }
+
+    public String getParking() {
+        return parking;
+    }
+
+    public void setParking(String parking) {
+        this.parking = parking;
+    }
+
+    public String getInternet() {
+        return internet;
+    }
+
+    public void setInternet(String internet) {
+        this.internet = internet;
+    }
+
+    public String getBalacony() {
+        return balacony;
+    }
+
+    public void setBalacony(String balacony) {
+        this.balacony = balacony;
+    }
+
+    public String getGarden() {
+        return garden;
+    }
+
+    public void setGarden(String garden) {
+        this.garden = garden;
+    }
+
+    public String getWorkout() {
+        return workout;
+    }
+
+    public void setWorkout(String workout) {
+        this.workout = workout;
+    }
+
+    public String getSecurity() {
+        return security;
+    }
+
+    public void setSecurity(String security) {
+        this.security = security;
+    }
+
+    public String getPets() {
+        return pets;
+    }
+
+    public void setPets(String pets) {
+        this.pets = pets;
+    }
+
+    public String getWashingmachines() {
+        return washingmachines;
+    }
+
+    public void setWashingmachines(String washingmachines) {
+        this.washingmachines = washingmachines;
+    }
+
+    public String getTv() {
+        return tv;
+    }
+
+    public void setTv(String tv) {
+        this.tv = tv;
+    }
+
+    public String getAirconditioner() {
+        return airconditioner;
+    }
+
+    public void setAirconditioner(String airconditioner) {
+        this.airconditioner = airconditioner;
+    }
+
+    public String getOther() {
+        return other;
+    }
+
+    public void setOther(String other) {
+        this.other = other;
+    }
+
+    public projectModel(String date, String propertytype, String adtitle, String addesc, String furinture, String garage, String parking, String internet, String balacony, String garden, String workout, String security, String pets, String washingmachines, String tv, String airconditioner, String other) {
+        this.date = date;
+        this.propertytype = propertytype;
+        this.adtitle = adtitle;
+        this.addesc = addesc;
+        this.furinture = furinture;
+        this.garage = garage;
+        this.parking = parking;
+        this.internet = internet;
+        this.balacony = balacony;
+        this.garden = garden;
+        this.workout = workout;
+        this.security = security;
+        this.pets = pets;
+        this.washingmachines = washingmachines;
+        this.tv = tv;
+        this.airconditioner = airconditioner;
+        this.other = other;
+    }
+
+    private String parking;
+    private String internet;
+    private String balacony;
+    private String garden;
+    private String workout;
+    private String security;
+    private String pets;
+    private String washingmachines;
+    private String tv;
+    private String airconditioner;
+    private String other;
 
     public projectModel(String id) {
         this.id = id;

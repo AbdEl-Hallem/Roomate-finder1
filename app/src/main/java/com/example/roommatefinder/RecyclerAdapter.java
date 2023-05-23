@@ -1,6 +1,7 @@
 package com.example.roommatefinder;
 
 import android.content.Context;
+import android.content.Intent;
 import android.icu.text.Transliterator;
 import android.os.Build;
 import android.view.LayoutInflater;
@@ -103,6 +104,27 @@ FirebaseDatabase firebaseDatabase;
         holder.beds.setText(model.getEdit_text_no_beds()+ " beds");
         holder.no_of_roommates.setText(model.getEdit_text_no_roommates()+ " mates");
         holder.item_posts.setText(model.getEdit_text_price_posts()+" price");
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(context , detailActivity.class);
+                intent.putExtra("imageslider" , model.getAdd_photo_posts());
+                intent.putExtra("full_adress" , model.getEdit_text_full_address_posts());
+                intent.putExtra("size" , model.getEdit_size());
+                intent.putExtra("baths" , model.getEdit_text_no_baths());
+                intent.putExtra("beds" , model.getEdit_text_no_beds());
+                intent.putExtra("roommates" , model.getEdit_text_no_roommates());
+                intent.putExtra("description" , model.getAddesc());
+                intent.putExtra("date" , model.getDate());
+                intent.putExtra("price" , model.getEdit_text_price_posts());
+                intent.putExtra("amenties" , model.getGarden());
+                intent.putExtra("amenties" , model.getBalacony());
+
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                context.startActivity(intent);
+            }
+        });
 
 
 
