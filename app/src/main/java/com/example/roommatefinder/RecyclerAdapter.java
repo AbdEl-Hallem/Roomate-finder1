@@ -1,10 +1,12 @@
 package com.example.roommatefinder;
 
 import android.content.Context;
+import android.icu.text.Transliterator;
 import android.os.Build;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -13,22 +15,33 @@ import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import jp.wasabeef.picasso.transformations.RoundedCornersTransformation;
 
 
 public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHolder> {
 
+    private boolean clicked = false ;
 
     ArrayList<projectModel> list;
     Context context;
+FirebaseDatabase firebaseDatabase;
+    ImageButton imageButton;
+    private List<projectModel> favoriteList;
+    private DatabaseReference databaseReference;
+
 
     public RecyclerAdapter(ArrayList<projectModel> list, Context context) {
         this.list = list;
         this.context = context;
+        favoriteList = new ArrayList<>();
+        databaseReference = FirebaseDatabase.getInstance().getReference("favourite");
     }
 
     @NonNull
@@ -43,6 +56,42 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         projectModel model = list.get(position);
+
+        boolean isFavorite = model.isFavorite();
+        if (model.isFavorite()) {
+            holder.imageButton.setImageResource(R.drawable.fav_svg);
+        } else {
+            holder.imageButton.setImageResource(R.drawable.favourtire_unfilled);
+        }
+
+        holder.imageButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                model.setFavorite(!model.isFavorite());
+
+                // Update the favorite button's icon
+                if (model.isFavorite()) {
+                    holder.imageButton.setImageResource(R.drawable.fav_svg);
+
+                    // Add the item to the favorite list
+                    favoriteList.add(model);
+
+                    // Save the item to the Firebase database
+                    String id = databaseReference.push().getKey();
+                    model.setId(id);
+                    databaseReference.child(id).setValue(model);
+                } else {
+                    holder.imageButton.setImageResource(R.drawable.favourtire_unfilled);
+
+                    // Remove the item from the favorite list
+                    favoriteList.remove(model);
+
+                    // Remove the item from the Firebase database
+                    databaseReference.child(model.getId()).removeValue();
+                }
+            }
+        });
+
         RoundedCornersTransformation transformation = new RoundedCornersTransformation(40, 0);
 
         Picasso.get().load(model.getAdd_photo_posts()).transform(transformation).fit().placeholder(R.drawable.img_card).into(holder.image_post);
@@ -54,6 +103,8 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
         holder.beds.setText(model.getEdit_text_no_beds()+ " beds");
         holder.no_of_roommates.setText(model.getEdit_text_no_roommates()+ " mates");
         holder.item_posts.setText(model.getEdit_text_price_posts()+" price");
+
+
 
 
 
@@ -70,6 +121,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
                 no_of_roommates, full_adress, area , first_name;
         ImageView image_post;
         ImageView profile_img;
+        ImageButton imageButton;
 
 
         public ViewHolder(@NonNull View itemView) {
@@ -87,8 +139,42 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
             no_of_roommates = itemView.findViewById(R.id.no_of_roommates);
             full_adress = itemView.findViewById(R.id.full_adress);
             area = itemView.findViewById(R.id.area);
+            imageButton = itemView.findViewById(R.id.fav_btn);
             image_post = itemView.findViewById(R.id.image_post);
+
+//            if (clicked) {
+//                imageButton.setImageResource(R.drawable.fav_svg);
+//
+//
+//            } else {
+//                imageButton.setImageResource(R.drawable.favourtire_unfilled);
+//            }
+//            imageButton.setOnClickListener(new View.OnClickListener() {
+//                @Override
+//                public void onClick(View view) {
+//
+//                    clicked = !clicked;
+//
+//                    if (clicked) {
+//
+//                        imageButton.setImageResource(R.drawable.fav_svg);
+//
+//
+//
+//                    } else {
+//                        imageButton.setImageResource(R.drawable. favourtire_unfilled);
+//                    }
+//
+//
+//
+//                }
+//            });
+
+
         }
+
+
+
     }
 
 }

@@ -8,6 +8,45 @@ public class projectModel {
     private String add_photo;
     private String add_photo_posts;
 
+    public projectModel(String id) {
+        this.id = id;
+    }
+
+    private String id;
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public boolean isFavorite() {
+        return isFavorite;
+    }
+
+    public void setFavorite(boolean favorite) {
+        isFavorite = favorite;
+    }
+
+    boolean isFavorite;
+
+//    public Boolean getFavorite() {
+//        return isFavorite;
+//    }
+//
+//    public void setFavorite(Boolean favorite) {
+//        isFavorite = favorite;
+//    }
+//
+//    private Boolean isFavorite;
+//
+//    public projectModel(Boolean isFavorite) {
+//        this.isFavorite = isFavorite;
+//    }
+
+
     public  projectModel(){
 
     }
@@ -16,6 +55,14 @@ public class projectModel {
         this.edit_text_first_name_fill_information = edit_text_first_name_fill_information;
         this.add_photo = add_photo;
     }
+//    public boolean isFavorite() {
+//        return isFavorite;
+//    }
+//
+//    public void setIsFavorite(boolean isFavorite) {
+//
+//        this.isFavorite = isFavorite;
+//    }
 
     public projectModel(String edit_text_last_name_fill_information, String edit_text_gender_fill_information, String edit_text_phone_number_fill_information, String edit_text_birth_date_fill_information, String edit_text_national_id_fill_information) {
         this.edit_text_last_name_fill_information = edit_text_last_name_fill_information;

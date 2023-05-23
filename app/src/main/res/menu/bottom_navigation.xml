@@ -5,7 +5,13 @@
         android:id="@+id/home"
         android:title="Home"
         android:icon="@drawable/icon__home_"/>
-   <item
+    <item
+        android:id="@+id/post_fav_svg"
+        android:title="favourite"
+        android:icon="@drawable/ic_baseline_favorite_24"
+        android:iconTint="@color/white"/>
+
+    <item
     android:id="@+id/post_add_svg"
     android:title="Post"
     android:icon="@drawable/add"

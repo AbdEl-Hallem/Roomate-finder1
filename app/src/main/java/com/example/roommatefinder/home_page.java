@@ -76,6 +76,10 @@ public class home_page extends AppCompatActivity {
                     startActivity(new Intent(getApplicationContext(), posts.class));
                     finish();
                     return true;
+                case R.id.post_fav_svg:
+                    startActivity(new Intent(getApplicationContext(), FavoriteActivity.class));
+                    finish();
+                    return true;
 
             }
 return false;
