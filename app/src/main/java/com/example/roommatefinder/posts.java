@@ -356,7 +356,6 @@ public class posts extends AppCompatActivity {
                                 model.setDate(date_edittext.getText().toString());
 
 
-
                                 model.setEdit_text_full_address_posts(edit_text_full_address_posts.getText().toString());
 
                                 model.setEdit_text_no_baths(edit_text_no_baths.getText().toString());

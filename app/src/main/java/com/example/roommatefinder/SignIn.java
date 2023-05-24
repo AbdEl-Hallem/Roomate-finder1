@@ -17,6 +17,11 @@ import com.facebook.FacebookCallback;
 import com.facebook.FacebookException;
 import com.facebook.login.LoginManager;
 import com.facebook.login.LoginResult;
+import com.google.android.gms.auth.api.signin.GoogleSignIn;
+import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
+import com.google.android.gms.auth.api.signin.GoogleSignInClient;
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
+import com.google.android.gms.common.api.ApiException;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthCredential;
@@ -32,12 +37,74 @@ public class SignIn extends AppCompatActivity {
     EditText Password;
     Button btnRegister;
     CallbackManager callbackManager ;
+    GoogleSignInOptions gso;
+    GoogleSignInClient gsc;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_in);
+
+
+
+
+
+
+
+
+//
+//        Button google_btn = findViewById(R.id.google_btn);
+//        gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN).requestEmail().build();
+//        gsc = GoogleSignIn.getClient(this,gso);
+//        google_btn.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                signIn();
+//            }
+//        });
+//
+//
+//    }
+//    void signIn(){
+//        Intent signInIntent = gsc.getSignInIntent();
+//        startActivityForResult(signInIntent,1000);
+//    }
+//
+//    @Override
+//    protected void onActivityResult(int requestCode, int resultCode,  Intent data) {
+//        super.onActivityResult(requestCode, resultCode, data);
+//        if(requestCode == 1000){
+//            Task<GoogleSignInAccount> task = GoogleSignIn.getSignedInAccountFromIntent(data);
+//            try {
+//                task.getResult(ApiException.class);
+//                Toast.makeText(getApplicationContext(), "Signed up successfully", Toast.LENGTH_SHORT).show();
+//                Intent intent = new Intent(SignIn.this , profile_screen.class);
+//                startActivity(intent);
+//            } catch (ApiException e) {
+//                Toast.makeText(getApplicationContext(), "Something went wrong", Toast.LENGTH_SHORT).show();
+//            }
+//        }
+//
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         mAuth = FirebaseAuth.getInstance();
 
 
@@ -122,7 +189,7 @@ public class SignIn extends AppCompatActivity {
                 public void onComplete(@NonNull Task<AuthResult> task) {
                     if (task.isSuccessful()){
                         Toast.makeText(SignIn.this, "User logged in successfully", Toast.LENGTH_SHORT).show();
-                        startActivity(new Intent(SignIn.this, MainActivity.class));
+                        startActivity(new Intent(SignIn.this, profile_screen.class));
                     }else{
                         Toast.makeText(SignIn.this, "Log in Error: " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                     }

@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
@@ -34,6 +35,8 @@ import com.squareup.picasso.Picasso;
 import java.util.ArrayList;
 
 public class detailActivity extends AppCompatActivity {
+    public static final String NAME = "NAME";
+    private String name;
 
     TextView full_adress , size , baths , beds , roommates , description ,date, price ,
             amenties, apartment_textview ,villa_textview, other_property_textview,
@@ -72,6 +75,11 @@ TextView first_name;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail);
+
+
+
+
+
         full_adress = findViewById(R.id.full_adress);
         size = findViewById(R.id.size);
         baths = findViewById(R.id.baths);
@@ -114,6 +122,15 @@ TextView first_name;
 
         imageslider = findViewById(R.id.imageslider);
 
+
+        SharedPreferences preferences = getSharedPreferences("MyPrefs", MODE_PRIVATE);
+        String firstName = preferences.getString("first_name", "");
+        first_name.setText(firstName);
+
+
+//        Intent intent = getIntent();
+//        name = intent.getStringExtra("first_name");
+//        first_name.setText(name);
 
 
 
@@ -282,7 +299,7 @@ TextView first_name;
         description.setText(getIntent().getStringExtra("description"));
         date.setText("Available from : " + getIntent().getStringExtra("date"));
         price.setText("price : " + getIntent().getStringExtra("price"));
-        first_name.setText(getIntent().getStringExtra("first_name"));
+//        first_name.setText(getIntent().getStringExtra("first_name"));
         String amentiesValue = getIntent().getStringExtra("amenties");
         String apartmentValue = getIntent().getStringExtra("apartment_textview");
         String villaValue = getIntent().getStringExtra("villa_textview");

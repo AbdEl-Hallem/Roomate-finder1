@@ -61,6 +61,7 @@ FirebaseDatabase firebaseDatabase;
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         projectModel model = list.get(position);
+        profile_model profileModel = new profile_model();
 
         boolean isFavorite = model.isFavorite();
         if (model.isFavorite()) {
@@ -114,50 +115,7 @@ FirebaseDatabase firebaseDatabase;
             public void onClick(View view) {
                 Intent intent = new Intent(context , detailActivity.class);
 
-
-
-//
-//                firebaseDatabase = FirebaseDatabase.getInstance();
-//
-//
-//                firebaseDatabase.getReference().child("house").addListenerForSingleValueEvent(new ValueEventListener() {
-//                    @Override
-//                    public void onDataChange(@NonNull DataSnapshot snapshot) {
-//
-//                        for (DataSnapshot dataSnapshot : snapshot.getChildren()){
-//
-//                            projectModel model = dataSnapshot.getValue(projectModel.class);
-//                            model.setEdit_text_first_name_fill_information(edit_text_first_name_fill_information.getText().toString());
-//
-//                        }
-//
-//
-//                    }
-//
-//                    @Override
-//                    public void onCancelled(@NonNull DatabaseError error) {
-//
-//                    }
-//                });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                 intent.putExtra("imageslider" , model.getAdd_photo_posts());
-
-
                 intent.putExtra("full_adress" , model.getEdit_text_full_address_posts());
                 intent.putExtra("size" , model.getEdit_size());
                 intent.putExtra("baths" , model.getEdit_text_no_baths());
@@ -185,7 +143,7 @@ FirebaseDatabase firebaseDatabase;
                 intent.putExtra("tv_textview" , model.getTv());
                 intent.putExtra("airconditioner_textview" , model.getAirconditioner());
                 intent.putExtra("otherappliance_textview" , model.getOther());
-                intent.putExtra("first_name" , model.getEdit_text_first_name_fill_information());
+//                intent.putExtra("first_name" , model.getEdit_text_first_name_fill_information());
                 intent.putExtra("profile_detail" , model.getAdd_photo());
 
 
@@ -239,7 +197,7 @@ FirebaseDatabase firebaseDatabase;
             area = itemView.findViewById(R.id.area);
             imageButton = itemView.findViewById(R.id.fav_btn);
             image_post = itemView.findViewById(R.id.image_post);
-
+//
 //            if (clicked) {
 //                imageButton.setImageResource(R.drawable.fav_svg);
 //

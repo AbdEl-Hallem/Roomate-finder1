@@ -18,6 +18,11 @@ import com.facebook.FacebookException;
 import com.facebook.login.LoginManager;
 import com.facebook.login.LoginResult;
 import com.facebook.login.widget.LoginButton;
+import com.google.android.gms.auth.api.signin.GoogleSignIn;
+import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
+import com.google.android.gms.auth.api.signin.GoogleSignInClient;
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
+import com.google.android.gms.common.api.ApiException;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthCredential;
@@ -28,6 +33,9 @@ import com.google.firebase.auth.FirebaseAuth;
 import java.util.Arrays;
 
 public class signUp extends AppCompatActivity {
+    GoogleSignInOptions gso;
+    GoogleSignInClient gsc;
+
     FirebaseAuth mAuth;
     Button btnRegister;
     EditText Email ;
@@ -39,9 +47,25 @@ public class signUp extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signup);
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         mAuth = FirebaseAuth.getInstance();
-
-
          callbackManager = CallbackManager.Factory.create();
 
         LoginManager.getInstance().registerCallback(callbackManager,
@@ -93,6 +117,12 @@ public class signUp extends AppCompatActivity {
             }
         });
 
+
+
+
+
+
+
     }
     private boolean isValidPassword(String password) {
         /*
@@ -135,6 +165,12 @@ public class signUp extends AppCompatActivity {
                 }
             });
 }
+
+
+
+
+
+
     }
 
     @Override
@@ -142,4 +178,10 @@ public class signUp extends AppCompatActivity {
         callbackManager.onActivityResult(requestCode, resultCode, data);
         super.onActivityResult(requestCode, resultCode, data);
     }
+
+
+
+
+
+
 }

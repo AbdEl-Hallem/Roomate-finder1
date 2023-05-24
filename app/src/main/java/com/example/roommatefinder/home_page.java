@@ -10,6 +10,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -33,6 +34,22 @@ public class home_page extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_page);
+
+        ImageView search = findViewById(R.id.search);
+        search.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(home_page.this , search.class);
+                startActivity(intent);
+            }
+        });
+
+
+
+
+
+
+
 
         recyclerView = findViewById(R.id.recycleView);
         recycleList = new ArrayList<>();
@@ -80,6 +97,10 @@ public class home_page extends AppCompatActivity {
                     return true;
                 case R.id.post_fav_svg:
                     startActivity(new Intent(getApplicationContext(), FavoriteActivity.class));
+                    finish();
+                    return true;
+                case R.id.setting:
+                    startActivity(new Intent(getApplicationContext(), Setting.class));
                     finish();
                     return true;
 

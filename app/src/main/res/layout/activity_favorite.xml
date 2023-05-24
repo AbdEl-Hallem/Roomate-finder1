@@ -6,6 +6,15 @@
     android:layout_height="match_parent"
     tools:context=".FavoriteActivity"
     android:orientation="vertical">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Saved"
+        android:textSize="30sp"
+        android:textColor="#432C82"
+        android:fontFamily="@font/nunito_bold"
+        android:padding="16dp"
+        android:layout_marginTop="8dp"/>
     <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

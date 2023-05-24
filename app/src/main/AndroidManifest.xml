@@ -20,6 +20,39 @@
         android:theme="@style/Theme.RoommateFinder"
         tools:targetApi="31">
         <activity
+            android:name=".filter"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+
+        </activity>
+        <activity
+        android:name=".Setting"
+        android:exported="false">
+        <meta-data
+            android:name="android.app.lib_name"
+            android:value="" />
+
+    </activity>
+        <activity
+        android:name=".search"
+        android:exported="false">
+        <meta-data
+            android:name="android.app.lib_name"
+            android:value="" />
+
+    </activity>
+        <activity
+            android:name=".ratingActivity"
+            android:exported="false">
+        <meta-data
+            android:name="android.app.lib_name"
+            android:value="" />
+
+        </activity>
+
+        <activity
             android:name=".FavoriteActivity"
             android:exported="false">
             <meta-data
@@ -46,11 +79,9 @@
         <activity
             android:name=".home_page"
             android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+
+
 
 
 
@@ -63,6 +94,11 @@
         <activity
             android:name=".profile_screen"
             android:exported="true">
+
+
+
+
+
 
 
 
@@ -84,6 +120,11 @@
         <activity
             android:name=".splashscreen"
             android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
 
             <!-- <intent-filter> -->
             <!-- <action android:name="android.intent.action.MAIN" /> -->
@@ -116,6 +157,7 @@
         <activity
             android:name=".MainActivity"
             android:exported="true">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
