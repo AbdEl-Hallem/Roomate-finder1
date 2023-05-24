@@ -61,7 +61,6 @@
                     android:id="@+id/house_textview"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-
                     android:drawableStart="@drawable/ph_house_line_bold"
                     android:fontFamily="@font/nunito_semibold"
                     android:text="House"
@@ -95,7 +94,7 @@
                     />
 
                 <TextView
-                    android:id="@+id/other_amenities_textview"
+                    android:id="@+id/other_property_textview"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
 
@@ -560,7 +559,7 @@
 
                     <TextView
                         android:id="@+id/otherappliance_textview"
-                        android:layout_width="match_parent"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:drawableStart="@drawable/fridge"
                         android:drawablePadding="16dp"

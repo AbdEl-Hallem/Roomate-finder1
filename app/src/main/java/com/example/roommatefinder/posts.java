@@ -44,7 +44,13 @@ public class posts extends AppCompatActivity {
     private FirebaseDatabase database;
     private FirebaseStorage firebaseStorage;
     ProgressDialog dialog;
-
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        finish();
+        Intent intent = new Intent(this, home_page.class);
+        startActivity(intent);
+    }
 
 
     @Override
@@ -58,7 +64,7 @@ public class posts extends AppCompatActivity {
         TextView house_textview = findViewById(R.id.house_textview);
         TextView apartment_textview = findViewById(R.id.apartment_textview);
         TextView villa_textview = findViewById(R.id.villa_textview);
-        TextView other_textview = findViewById(R.id.other_amenities_textview);
+        TextView other_textview = findViewById(R.id.other_property_textview);
 
 
 
@@ -235,6 +241,25 @@ public class posts extends AppCompatActivity {
             public void onClick(View view) {
                 dialog.show();
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                 final StorageReference reference = firebaseStorage.getReference().child("house").child(System.currentTimeMillis() + "");
 
                 reference.putFile(ImageUri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
@@ -345,7 +370,6 @@ public class posts extends AppCompatActivity {
                                 model.setEdit_text_no_roommates(edit_text_no_roommates.getText().toString());
 
                                 model.setEdit_size(edit_size.getText().toString());
-
                                 database.getReference().child("house").push().setValue(model)
                                         .addOnSuccessListener(new OnSuccessListener<Void>() {
                                             @Override

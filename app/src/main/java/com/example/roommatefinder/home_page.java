@@ -41,6 +41,8 @@ public class home_page extends AppCompatActivity {
 
         RecyclerAdapter recyclerAdapter = new RecyclerAdapter(recycleList , getApplicationContext());
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
+        linearLayoutManager.setReverseLayout(true);
+        linearLayoutManager.setStackFromEnd(true);
         recyclerView.setLayoutManager(linearLayoutManager);
         recyclerView.addItemDecoration(new DividerItemDecoration(recyclerView.getContext(), DividerItemDecoration.VERTICAL));
         recyclerView.setNestedScrollingEnabled(false);

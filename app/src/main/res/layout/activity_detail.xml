@@ -47,8 +47,6 @@
             android:drawableStart="@drawable/measurment_svg"
             android:drawablePadding="4dp"
             android:padding="8dp"
-
-
             android:text="Size" />
 
         <TextView
@@ -186,8 +184,238 @@
         android:padding="8dp"
         android:text="House"
         android:textColor="#9747FF"
-
         android:textSize="20sp" />
+    <TextView
+        android:layout_marginLeft="16dp"
+        android:padding="8dp"
+        android:id="@+id/apartment_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawableStart="@drawable/apartment"
+        android:fontFamily="@font/nunito_semibold"
+        android:text="Apartment"
+        android:textColor="#9747FF"
+        android:textSize="20sp"
+        android:drawablePadding="8dp"
+        />
+    <TextView
+
+        android:id="@+id/villa_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:drawableStart="@drawable/villa"
+        android:fontFamily="@font/nunito_semibold"
+        android:text="Villa"
+        android:textColor="#9747FF"
+        android:textSize="20sp"
+        android:drawablePadding="8dp"
+        android:layout_marginLeft="16dp"
+        android:padding="8dp"
+        />
+    <TextView
+        android:id="@+id/other_property_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawableStart="@drawable/other"
+        android:fontFamily="@font/nunito_semibold"
+        android:text="Other"
+        android:textColor="#9747FF"
+        android:textSize="20sp"
+        android:drawablePadding="8dp"
+        android:layout_marginLeft="16dp"
+        android:padding="8dp"
+        />
+    <TextView
+        android:id="@+id/garage_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawableStart="@drawable/garage"
+        android:fontFamily="@font/nunito_semibold"
+        android:text="Garage"
+        android:textColor="#9747FF"
+        android:textSize="20sp"
+        android:drawablePadding="8dp"
+        android:layout_marginLeft="16dp"
+        android:padding="8dp"
+        />
+    <TextView
+        android:id="@+id/parking_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawableStart="@drawable/parking"
+        android:fontFamily="@font/nunito_semibold"
+        android:text="Parking"
+        android:textColor="#9747FF"
+        android:textSize="20sp"
+        android:drawablePadding="8dp"
+        android:layout_marginLeft="16dp"
+        android:padding="8dp"
+        />
+    <TextView
+        android:id="@+id/internet_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawableStart="@drawable/internet"
+        android:fontFamily="@font/nunito_semibold"
+        android:text="Internet"
+        android:textColor="#9747FF"
+        android:textSize="20sp"
+        android:drawablePadding="8dp"
+        android:layout_marginLeft="16dp"
+        android:padding="8dp"
+        />
+    <TextView
+        android:id="@+id/balacony_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawableStart="@drawable/balacony"
+        android:fontFamily="@font/nunito_semibold"
+        android:text="Balcony|Terrace"
+        android:textColor="#9747FF"
+        android:textSize="20sp"
+        android:drawablePadding="8dp"
+        android:layout_marginLeft="16dp"
+        android:padding="8dp"
+        />
+    <TextView
+        android:id="@+id/garden_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawableStart="@drawable/garden"
+        android:fontFamily="@font/nunito_semibold"
+        android:text="Garden|Yard"
+        android:textColor="#9747FF"
+        android:textSize="20sp"
+        android:drawablePadding="8dp"
+        android:layout_marginLeft="16dp"
+        android:padding="8dp"
+        />
+    <TextView
+        android:id="@+id/workingout_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:drawableStart="@drawable/workingout"
+        android:fontFamily="@font/nunito_semibold"
+        android:text="Workout Facilities"
+        android:textColor="#9747FF"
+        android:textSize="20sp"
+        android:drawablePadding="8dp"
+        android:layout_marginLeft="16dp"
+        android:padding="8dp"
+        />
+    <TextView
+        android:id="@+id/security_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:drawableStart="@drawable/security"
+        android:fontFamily="@font/nunito_semibold"
+        android:text="Securities"
+        android:textColor="#9747FF"
+        android:textSize="20sp"
+        android:drawablePadding="8dp"
+        android:layout_marginLeft="16dp"
+        android:padding="8dp"
+        />
+    <TextView
+        android:id="@+id/pets_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:drawableStart="@drawable/pets"
+        android:fontFamily="@font/nunito_semibold"
+        android:text="Pets Allowed"
+        android:textColor="#9747FF"
+        android:textSize="20sp"
+        android:drawablePadding="8dp"
+        android:layout_marginLeft="16dp"
+        android:padding="8dp"
+        />
+    <TextView
+        android:id="@+id/furnishing_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawableStart="@drawable/furniture"
+        android:fontFamily="@font/nunito_semibold"
+        android:text="Furnished"
+        android:textColor="#9747FF"
+        android:textSize="20sp"
+        android:drawablePadding="8dp"
+        android:layout_marginLeft="16dp"
+        android:padding="8dp"
+        />
+    <TextView
+        android:id="@+id/notfurnishing_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawableStart="@drawable/furniture"
+        android:fontFamily="@font/nunito_semibold"
+        android:text="Not Furnished"
+        android:textColor="#9747FF"
+        android:textSize="20sp"
+        android:drawablePadding="8dp"
+        android:layout_marginLeft="16dp"
+        android:padding="8dp"
+        />
+    <TextView
+        android:id="@+id/washingmachine_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawableStart="@drawable/washingmachine"
+        android:fontFamily="@font/nunito_semibold"
+        android:text="Washing Machine"
+        android:textColor="#9747FF"
+        android:textSize="20sp"
+        android:drawablePadding="8dp"
+        android:layout_marginLeft="16dp"
+        android:padding="8dp"
+        />
+    <TextView
+        android:id="@+id/tv_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawableStart="@drawable/tv"
+        android:fontFamily="@font/nunito_semibold"
+        android:text="TV Unit"
+        android:textColor="#9747FF"
+        android:textSize="20sp"
+        android:drawablePadding="8dp"
+        android:layout_marginLeft="16dp"
+        android:padding="8dp"
+        />
+    <TextView
+        android:id="@+id/airconditioner_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawableStart="@drawable/tv"
+        android:fontFamily="@font/nunito_semibold"
+        android:text="Air Conditioning"
+        android:textColor="#9747FF"
+        android:textSize="20sp"
+        android:drawablePadding="8dp"
+        android:layout_marginLeft="16dp"
+        android:padding="8dp"
+        />
+    <TextView
+        android:id="@+id/otherappliance_textview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:drawableStart="@drawable/fridge"
+
+        android:fontFamily="@font/nunito_semibold"
+        android:text="Other Appliances"
+        android:textColor="#9747FF"
+        android:textSize="20sp"
+        android:drawablePadding="8dp"
+        android:layout_marginLeft="16dp"
+        android:padding="8dp"/>
+
+
+
+
+
 
 
     <View
@@ -205,14 +433,14 @@
 
 
         <ImageView
+            android:id="@+id/profile_detail"
             android:layout_width="52dp"
-            android:layout_height="54dp"
 
-            android:scaleType="fitStart"
-            android:src="@drawable/add_photo_ic"
-            android:layout_marginTop="4dp"
+            android:layout_height="54dp"
             android:layout_marginStart="16dp"
-            />
+            android:layout_marginTop="4dp"
+            android:scaleType="fitStart"
+            android:src="@drawable/add_photo_ic" />
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
@@ -221,15 +449,15 @@
             >
 
             <TextView
+                android:id="@+id/first_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Name"
-                android:textSize="16sp"
-                android:textColor="#432C82"
                 android:fontFamily="@font/nunito_bold"
+                android:text="Name"
+                android:textColor="#432C82"
 
 
-                />
+                android:textSize="16sp" />
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

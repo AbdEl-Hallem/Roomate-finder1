@@ -16,8 +16,12 @@ import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
+import com.google.firebase.database.ValueEventListener;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
@@ -109,7 +113,51 @@ FirebaseDatabase firebaseDatabase;
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(context , detailActivity.class);
+
+
+
+//
+//                firebaseDatabase = FirebaseDatabase.getInstance();
+//
+//
+//                firebaseDatabase.getReference().child("house").addListenerForSingleValueEvent(new ValueEventListener() {
+//                    @Override
+//                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+//
+//                        for (DataSnapshot dataSnapshot : snapshot.getChildren()){
+//
+//                            projectModel model = dataSnapshot.getValue(projectModel.class);
+//                            model.setEdit_text_first_name_fill_information(edit_text_first_name_fill_information.getText().toString());
+//
+//                        }
+//
+//
+//                    }
+//
+//                    @Override
+//                    public void onCancelled(@NonNull DatabaseError error) {
+//
+//                    }
+//                });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                 intent.putExtra("imageslider" , model.getAdd_photo_posts());
+
+
                 intent.putExtra("full_adress" , model.getEdit_text_full_address_posts());
                 intent.putExtra("size" , model.getEdit_size());
                 intent.putExtra("baths" , model.getEdit_text_no_baths());
@@ -118,8 +166,36 @@ FirebaseDatabase firebaseDatabase;
                 intent.putExtra("description" , model.getAddesc());
                 intent.putExtra("date" , model.getDate());
                 intent.putExtra("price" , model.getEdit_text_price_posts());
-                intent.putExtra("amenties" , model.getGarden());
-                intent.putExtra("amenties" , model.getBalacony());
+                intent.putExtra("amenties" , model.getPropertytype());
+                intent.putExtra("apartment_textview" , model.getPropertytype());
+                intent.putExtra("villa_textview" , model.getPropertytype());
+                intent.putExtra("other_property_textview" , model.getPropertytype());
+                intent.putExtra("garage_textview" , model.getGarage());
+                intent.putExtra("parking_textview" , model.getParking());
+                intent.putExtra("internet_textview" , model.getInternet());
+                intent.putExtra("balacony_textview" , model.getBalacony());
+                intent.putExtra("garden_textview" , model.getGarden());
+                intent.putExtra("workingout_textview" , model.getWorkout());
+                intent.putExtra("security_textview" , model.getSecurity());
+                intent.putExtra("pets_textview" , model.getPets());
+                intent.putExtra("other_amenities_textview" , model.getPropertytype());
+                intent.putExtra("furnishing_textview" , model.getFurinture());
+                intent.putExtra("notfurnishing_textview" , model.getFurinture());
+                intent.putExtra("" , model.getWashingmachines());
+                intent.putExtra("tv_textview" , model.getTv());
+                intent.putExtra("airconditioner_textview" , model.getAirconditioner());
+                intent.putExtra("otherappliance_textview" , model.getOther());
+                intent.putExtra("first_name" , model.getEdit_text_first_name_fill_information());
+                intent.putExtra("profile_detail" , model.getAdd_photo());
+
+
+
+
+
+
+
+
+
 
                 intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 context.startActivity(intent);
