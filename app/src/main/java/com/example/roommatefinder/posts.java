@@ -1,8 +1,10 @@
 package com.example.roommatefinder;
 
-import static androidx.activity.result.contract.ActivityResultContracts.*;
+import static androidx.activity.result.contract.ActivityResultContracts.PickMultipleVisualMedia;
+import static androidx.activity.result.contract.ActivityResultContracts.PickVisualMedia;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
@@ -382,6 +384,8 @@ public class posts extends AppCompatActivity {
 
                                             Toast.makeText(posts.this, "House img upload successfully", Toast.LENGTH_SHORT).show();
                                             dialog.dismiss();
+                                            Intent intent = new Intent(posts.this , home_page.class);
+                                            startActivity(intent);
                                             finish();
 
                                         }
