@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Background for the selected state -->
+    <item android:drawable="@drawable/interests_button_after_bg" android:state_selected="true" />
+    <!-- Background for the not selected state -->
+    <item android:drawable="@drawable/intersts_button_before_bg" />
+</selector>

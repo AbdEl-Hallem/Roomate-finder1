@@ -3,6 +3,7 @@ package com.example.roommatefinder;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.viewpager.widget.ViewPager;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -14,6 +15,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.github.fajaragungpramana.dotsindicator.DotsIndicator;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -32,7 +34,10 @@ import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 import com.squareup.picasso.Picasso;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 public class detailActivity extends AppCompatActivity {
     public static final String NAME = "NAME";
@@ -44,6 +49,7 @@ public class detailActivity extends AppCompatActivity {
             , security_textview , pets_textview
             ,furnishing_textview , notfurnishing_textview
             ,washingmachine_textview,tv_textview,airconditioner_textview,otherappliance_textview;
+    DotsIndicator dotsIndicator;
 ImageView profile_detail;
 TextView first_name;
     Uri ImageUri;
@@ -69,17 +75,19 @@ TextView first_name;
 
 
 
-    ImageView imageslider;
+    ViewPager imageslider;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail);
+        database = FirebaseDatabase.getInstance();
 
 
 
 
 
+        dotsIndicator = findViewById(R.id.dotsIndicator);
         full_adress = findViewById(R.id.full_adress);
         size = findViewById(R.id.size);
         baths = findViewById(R.id.baths);
@@ -120,7 +128,7 @@ TextView first_name;
         first_name = findViewById(R.id.first_name);
 
 
-        imageslider = findViewById(R.id.imageslider);
+        imageslider = findViewById(R.id.imageSlider);
 
 
         SharedPreferences preferences = getSharedPreferences("MyPrefs", MODE_PRIVATE);
@@ -282,14 +290,42 @@ TextView first_name;
 //            }
 //        });
 
+        String [] imagesArray = getIntent().getStringArrayExtra("images");
+        if (imagesArray != null) {
+            List<String> images = Arrays.asList(imagesArray);
+            ImagesAdapter imagesAdapter = new ImagesAdapter(this, images);
+            imageslider.setAdapter(imagesAdapter);
+            dotsIndicator.setViewPager(imageslider);
+            if (images.size() < 2)
+                dotsIndicator.setVisibility(View.GONE);
+        } else
+            dotsIndicator.setVisibility(View.GONE);
 
+        String uid = getIntent().getStringExtra("uid");
+        if (uid != null){
+            database.getReference().child("profile data").child(uid).get().addOnSuccessListener(new OnSuccessListener<DataSnapshot>() {
 
+                @Override
+                public void onSuccess(DataSnapshot dataSnapshot) {
+                    if (dataSnapshot.exists()) {
+                        projectModel model = dataSnapshot.getValue(projectModel.class);
+                        if (model != null) {
+                            RecyclerView interestsRecyclerView = findViewById(R.id.interests_recycler_view);
+                            List<String> interestList = model.getInterests();
+                            InterestsAdapter interestsAdapter = new InterestsAdapter(interestList);
+                            interestsAdapter.setOnItemClickListener(null);
+                            interestsRecyclerView.setAdapter(interestsAdapter);
 
+                            Picasso.get().load(model.getAdd_photo())
+                                    .fit().into(profile_detail);
 
+                            first_name.setText(model.getEdit_text_first_name_fill_information());
 
-        Picasso.get().load(getIntent().getStringExtra("imageslider")).placeholder(R.drawable.a).fit().into(imageslider);
-
-
+                        }
+                    }
+                }
+            });
+        }
 
         full_adress.setText(getIntent().getStringExtra("full_adress"));
         size.setText(getIntent().getStringExtra("size")+" size");

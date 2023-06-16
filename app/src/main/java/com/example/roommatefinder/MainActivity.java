@@ -22,6 +22,12 @@ public class MainActivity extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
 
 
+        if (mAuth.getCurrentUser() != null) {
+            Intent intent = new Intent(this, profile_screen.class);
+            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+            startActivity(intent);
+            finish();
+        }
         Button button = findViewById(R.id.btnNext1);
         button.setOnClickListener(new View.OnClickListener() {
             @Override

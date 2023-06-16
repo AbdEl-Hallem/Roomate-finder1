@@ -11,13 +11,24 @@
     android:layout_height="match_parent"
     tools:context=".detailActivity"
     android:orientation="vertical">
-    <ImageView
+
+    <androidx.viewpager.widget.ViewPager
         android:layout_width="match_parent"
         android:layout_height="220dp"
         android:textAlignment="center"
-        android:id="@+id/imageslider"
-        app:iss_auto_cycle="false"
+        android:id="@+id/imageSlider"
         />
+
+    <com.github.fajaragungpramana.dotsindicator.DotsIndicator
+        android:id="@+id/dotsIndicator"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="8dp"
+        app:dotColor="#cccccc"
+        app:dotSelectedColor="@color/default_button"
+        app:dotSize="20dp"
+        app:dotSpacing="6dp" />
 
     <TextView
         android:id="@+id/full_adress"
@@ -465,12 +476,20 @@
                 android:textColor="#432C82"
                 android:textSize="12sp"
                 />
-
-
 </LinearLayout>
 
         </LinearLayout>
 
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/interests_recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:orientation="horizontal"
+        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+        app:spanCount="2"
+        tools:listitem="@layout/intrest_item"
+        />
 
 
 

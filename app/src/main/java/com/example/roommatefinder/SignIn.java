@@ -89,26 +89,7 @@ public class SignIn extends AppCompatActivity {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         mAuth = FirebaseAuth.getInstance();
-
-
-
 
 
         callbackManager = CallbackManager.Factory.create();
@@ -189,7 +170,10 @@ public class SignIn extends AppCompatActivity {
                 public void onComplete(@NonNull Task<AuthResult> task) {
                     if (task.isSuccessful()){
                         Toast.makeText(SignIn.this, "User logged in successfully", Toast.LENGTH_SHORT).show();
-                        startActivity(new Intent(SignIn.this, profile_screen.class));
+                        Intent intent = new Intent(SignIn.this, profile_screen.class);
+                        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                        startActivity(intent);
+                        finish();
                     }else{
                         Toast.makeText(SignIn.this, "Log in Error: " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                     }

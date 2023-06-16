@@ -25,6 +25,7 @@ import com.google.firebase.database.ValueEventListener;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import jp.wasabeef.picasso.transformations.RoundedCornersTransformation;
@@ -32,11 +33,11 @@ import jp.wasabeef.picasso.transformations.RoundedCornersTransformation;
 
 public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHolder> {
 
-    private boolean clicked = false ;
+    private boolean clicked = false;
 
     ArrayList<projectModel> list;
     Context context;
-FirebaseDatabase firebaseDatabase;
+    FirebaseDatabase firebaseDatabase;
     ImageButton imageButton;
     private List<projectModel> favoriteList;
     private DatabaseReference databaseReference;
@@ -53,7 +54,7 @@ FirebaseDatabase firebaseDatabase;
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
-        View view = LayoutInflater.from(context).inflate(R.layout.items_recyclerview , parent,false);
+        View view = LayoutInflater.from(context).inflate(R.layout.items_recyclerview, parent, false);
         return new ViewHolder(view);
     }
 
@@ -100,68 +101,60 @@ FirebaseDatabase firebaseDatabase;
 
         RoundedCornersTransformation transformation = new RoundedCornersTransformation(40, 0);
 
-        Picasso.get().load(model.getAdd_photo_posts()).transform(transformation).fit().placeholder(R.drawable.img_card).into(holder.image_post);
+        if (model.getPost_images() != null && !model.getPost_images().isEmpty())
+            Picasso.get().load(model.getPost_images().get(0)).transform(transformation).fit().placeholder(R.drawable.img_card).into(holder.image_post);
 
-        holder.size.setText(model.getEdit_size()+" Size");
+        holder.size.setText(model.getEdit_size() + " Size");
         holder.area.setText(model.getEdit_text_area_posts());
         holder.full_adress.setText(model.getEdit_text_full_address_posts());
-        holder.baths.setText(model.getEdit_text_no_baths() +" baths");
-        holder.beds.setText(model.getEdit_text_no_beds()+ " beds");
-        holder.no_of_roommates.setText(model.getEdit_text_no_roommates()+ " mates");
-        holder.item_posts.setText(model.getEdit_text_price_posts()+" price");
+        holder.baths.setText(model.getEdit_text_no_baths() + " baths");
+        holder.beds.setText(model.getEdit_text_no_beds() + " beds");
+        holder.no_of_roommates.setText(model.getEdit_text_no_roommates() + " mates");
+        holder.item_posts.setText(model.getEdit_text_price_posts() + " price");
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(context , detailActivity.class);
+                Intent intent = new Intent(context, detailActivity.class);
 
-                intent.putExtra("imageslider" , model.getAdd_photo_posts());
-                intent.putExtra("full_adress" , model.getEdit_text_full_address_posts());
-                intent.putExtra("size" , model.getEdit_size());
-                intent.putExtra("baths" , model.getEdit_text_no_baths());
-                intent.putExtra("beds" , model.getEdit_text_no_beds());
-                intent.putExtra("roommates" , model.getEdit_text_no_roommates());
-                intent.putExtra("description" , model.getAddesc());
-                intent.putExtra("date" , model.getDate());
-                intent.putExtra("price" , model.getEdit_text_price_posts());
-                intent.putExtra("amenties" , model.getPropertytype());
-                intent.putExtra("apartment_textview" , model.getPropertytype());
-                intent.putExtra("villa_textview" , model.getPropertytype());
-                intent.putExtra("other_property_textview" , model.getPropertytype());
-                intent.putExtra("garage_textview" , model.getGarage());
-                intent.putExtra("parking_textview" , model.getParking());
-                intent.putExtra("internet_textview" , model.getInternet());
-                intent.putExtra("balacony_textview" , model.getBalacony());
-                intent.putExtra("garden_textview" , model.getGarden());
-                intent.putExtra("workingout_textview" , model.getWorkout());
-                intent.putExtra("security_textview" , model.getSecurity());
-                intent.putExtra("pets_textview" , model.getPets());
-                intent.putExtra("other_amenities_textview" , model.getPropertytype());
-                intent.putExtra("furnishing_textview" , model.getFurinture());
-                intent.putExtra("notfurnishing_textview" , model.getFurinture());
-                intent.putExtra("" , model.getWashingmachines());
-                intent.putExtra("tv_textview" , model.getTv());
-                intent.putExtra("airconditioner_textview" , model.getAirconditioner());
-                intent.putExtra("otherappliance_textview" , model.getOther());
+                intent.putExtra("uid", model.getUid());
+                if (model.getPost_images() != null && !model.getPost_images().isEmpty())
+                    intent.putExtra("images", model.getPost_images().toArray(new String[0]));
+                intent.putExtra("full_adress", model.getEdit_text_full_address_posts());
+                intent.putExtra("size", model.getEdit_size());
+                intent.putExtra("baths", model.getEdit_text_no_baths());
+                intent.putExtra("beds", model.getEdit_text_no_beds());
+                intent.putExtra("roommates", model.getEdit_text_no_roommates());
+                intent.putExtra("description", model.getAddesc());
+                intent.putExtra("date", model.getDate());
+                intent.putExtra("price", model.getEdit_text_price_posts());
+                intent.putExtra("amenties", model.getPropertytype());
+                intent.putExtra("apartment_textview", model.getPropertytype());
+                intent.putExtra("villa_textview", model.getPropertytype());
+                intent.putExtra("other_property_textview", model.getPropertytype());
+                intent.putExtra("garage_textview", model.getGarage());
+                intent.putExtra("parking_textview", model.getParking());
+                intent.putExtra("internet_textview", model.getInternet());
+                intent.putExtra("balacony_textview", model.getBalacony());
+                intent.putExtra("garden_textview", model.getGarden());
+                intent.putExtra("workingout_textview", model.getWorkout());
+                intent.putExtra("security_textview", model.getSecurity());
+                intent.putExtra("pets_textview", model.getPets());
+                intent.putExtra("other_amenities_textview", model.getPropertytype());
+                intent.putExtra("furnishing_textview", model.getFurinture());
+                intent.putExtra("notfurnishing_textview", model.getFurinture());
+                intent.putExtra("", model.getWashingmachines());
+                intent.putExtra("tv_textview", model.getTv());
+                intent.putExtra("airconditioner_textview", model.getAirconditioner());
+                intent.putExtra("otherappliance_textview", model.getOther());
 //                intent.putExtra("first_name" , model.getEdit_text_first_name_fill_information());
-                intent.putExtra("profile_detail" , model.getAdd_photo());
-
-
-
-
-
-
-
-
+                intent.putExtra("profile_detail", model.getAdd_photo());
 
 
                 intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 context.startActivity(intent);
             }
         });
-
-
-
 
 
     }
@@ -171,10 +164,10 @@ FirebaseDatabase firebaseDatabase;
         return list.size();
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder{
+    public class ViewHolder extends RecyclerView.ViewHolder {
 
         TextView item_posts, size, beds, baths,
-                no_of_roommates, full_adress, area , first_name;
+                no_of_roommates, full_adress, area, first_name;
         ImageView image_post;
         ImageView profile_img;
         ImageButton imageButton;
@@ -183,14 +176,11 @@ FirebaseDatabase firebaseDatabase;
         public ViewHolder(@NonNull View itemView) {
 
 
-
-
-
             super(itemView);
 
             item_posts = itemView.findViewById(R.id.price);
             size = itemView.findViewById(R.id.size);
-            beds =itemView. findViewById(R.id.beds);
+            beds = itemView.findViewById(R.id.beds);
             baths = itemView.findViewById(R.id.baths);
             no_of_roommates = itemView.findViewById(R.id.no_of_roommates);
             full_adress = itemView.findViewById(R.id.full_adress);
@@ -228,7 +218,6 @@ FirebaseDatabase firebaseDatabase;
 
 
         }
-
 
 
     }

@@ -15,6 +15,8 @@ import android.widget.CompoundButton;
 import android.widget.Switch;
 import android.widget.TextView;
 
+import com.google.firebase.auth.FirebaseAuth;
+
 public class Setting extends AppCompatActivity {
 
     @Override
@@ -25,6 +27,7 @@ public class Setting extends AppCompatActivity {
 
         TextView saved = findViewById(R.id.save);
         TextView rating = findViewById(R.id.rateing);
+        TextView logout = findViewById(R.id.logout);
 
         saved.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -92,6 +95,17 @@ public class Setting extends AppCompatActivity {
 
                     msgnotification_switchbutton.setThumbTintList(thumbColorStateList);
                 }
+            }
+        });
+
+        logout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                FirebaseAuth.getInstance().signOut();
+                Intent intent = new Intent(Setting.this, ratingActivity.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                startActivity(intent);
+                Setting.this.finish();
             }
         });
 

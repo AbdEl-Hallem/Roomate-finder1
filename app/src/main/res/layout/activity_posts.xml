@@ -872,6 +872,27 @@
             android:textSize="19sp"
             app:layout_constraintStart_toStartOf="parent" />
 
+        <androidx.viewpager.widget.ViewPager
+            android:layout_width="match_parent"
+            android:layout_height="220dp"
+            android:textAlignment="center"
+            android:id="@+id/imageSlider"
+            android:visibility="gone"
+            android:layout_marginTop="10dp"
+            />
+
+        <com.github.fajaragungpramana.dotsindicator.DotsIndicator
+            android:id="@+id/dotsIndicator"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="8dp"
+            app:dotColor="#cccccc"
+            app:dotSelectedColor="@color/default_button"
+            app:dotSize="20dp"
+            android:visibility="gone"
+            app:dotSpacing="6dp" />
+
         <ImageView
             android:id="@+id/add_photo_posts"
             android:layout_margin="8dp"
@@ -908,7 +929,7 @@
             android:layout_height="wrap_content"
             android:background="@drawable/summery"
             android:fontFamily="@font/nunito_semibold"
-
+            android:layout_marginTop="12dp"
             android:paddingStart="25dp"
             android:text="Summery"
             android:textColor="#461D8D"
