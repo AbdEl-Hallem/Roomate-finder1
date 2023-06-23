@@ -1,0 +1,352 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/top_card"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:cardBackgroundColor="#AC65BF"
+        app:cardCornerRadius="16dp"
+        android:layout_marginTop="-12dp"
+        >
+
+        <TextView
+            android:text="Boost Your Advertisement"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingVertical="42dp"
+            android:textColor="@color/white"
+            android:textAlignment="center"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            />
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/choose_package"
+        app:layout_constraintTop_toBottomOf="@id/top_card"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:textSize="34sp"
+        android:text="Choose Your\nPackage"
+        android:lineSpacingMultiplier="0.8"
+        android:textStyle="bold"
+        android:layout_marginTop="12dp"
+        android:textColor="#CEA6D6"
+        />
+
+
+    <LinearLayout
+        android:id="@+id/choices"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/choose_package"
+        android:orientation="vertical"
+        >
+
+        <LinearLayout
+            android:id="@+id/layout1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="#E8E8E8"
+            android:layout_marginTop="18dp"
+            >
+
+            <TextView
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:text="Basic\n\n10.00$"
+                android:paddingVertical="12dp"
+                android:layout_gravity="center"
+                android:textAlignment="center"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:textColor="@color/default_button"
+                />
+
+            <com.google.android.material.divider.MaterialDivider
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                app:dividerColor="@color/default_button"
+                />
+
+            <LinearLayout
+                android:layout_marginStart="16dp"
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Estimated Reach"
+                    android:textSize="18sp"
+                    android:textColor="@color/default_button"
+                    android:layout_gravity="center"
+                    android:paddingVertical="6dp"
+                    android:textAlignment="center"
+                    android:paddingHorizontal="12dp"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="1000"
+                    android:textSize="18sp"
+                    android:layout_gravity="center"
+                    android:paddingVertical="6dp"
+                    android:drawableTint="@color/default_button"
+                    android:textColor="@color/default_button"
+                    app:drawableStartCompat="@drawable/ic_people" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Duration 1 week"
+                    android:textSize="18sp"
+                    android:layout_gravity="center"
+                    android:textColor="@color/default_button"
+                    android:paddingVertical="6dp"
+                    android:textAlignment="center"
+                    android:paddingHorizontal="12dp"
+                    />
+
+            </LinearLayout>
+
+            <RadioButton
+                android:id="@+id/radio1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="24dp"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/layout2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="#E8E8E8"
+            android:layout_marginTop="18dp"
+
+            >
+
+            <TextView
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:text="Intermediate\n\n20.00$"
+                android:paddingVertical="12dp"
+                android:layout_gravity="center"
+                android:textAlignment="center"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:textColor="@color/default_button"
+                />
+
+            <com.google.android.material.divider.MaterialDivider
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                app:dividerColor="@color/default_button"
+                />
+
+            <LinearLayout
+                android:layout_marginStart="16dp"
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Estimated Reach"
+                    android:textSize="18sp"
+                    android:textColor="@color/default_button"
+                    android:paddingVertical="6dp"
+                    android:layout_gravity="center"
+                    android:textAlignment="center"
+                    android:paddingHorizontal="12dp"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="10000"
+                    android:textSize="18sp"
+                    android:layout_gravity="center"
+                    android:drawableTint="@color/default_button"
+                    android:textColor="@color/default_button"
+                    android:paddingVertical="6dp"
+                    app:drawableStartCompat="@drawable/ic_people" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Duration 2 weeks"
+                    android:textSize="18sp"
+                    android:layout_gravity="center"
+                    android:textColor="@color/default_button"
+                    android:paddingVertical="6dp"
+                    android:textAlignment="center"
+                    android:paddingHorizontal="12dp"
+                    />
+
+            </LinearLayout>
+
+            <RadioButton
+                android:id="@+id/radio2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="24dp"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/layout3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="#E8E8E8"
+            android:layout_marginTop="18dp"
+            >
+
+            <TextView
+                android:layout_width="120dp"
+                android:textAlignment="center"
+                android:layout_height="wrap_content"
+                android:text="Ultimate\n\n30.00$"
+                android:paddingVertical="16dp"
+                android:layout_gravity="center"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:textColor="@color/default_button"
+                />
+
+            <com.google.android.material.divider.MaterialDivider
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                app:dividerColor="@color/default_button"
+                />
+
+            <LinearLayout
+                android:layout_marginStart="16dp"
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Estimated Reach"
+                    android:textSize="18sp"
+                    android:textColor="@color/default_button"
+                    android:paddingVertical="6dp"
+                    android:layout_gravity="center"
+                    android:textAlignment="center"
+                    android:paddingHorizontal="12dp"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="100000"
+                    android:textSize="18sp"
+                    android:layout_gravity="center"
+                    android:drawableTint="@color/default_button"
+                    android:textColor="@color/default_button"
+                    android:paddingVertical="6dp"
+
+                    app:drawableStartCompat="@drawable/ic_people" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Duration 3 weeks"
+                    android:textSize="18sp"
+                    android:layout_gravity="center"
+                    android:textColor="@color/default_button"
+                    android:paddingVertical="6dp"
+                    android:textAlignment="center"
+                    android:paddingHorizontal="12dp"
+                    />
+
+            </LinearLayout>
+
+            <RadioButton
+                android:id="@+id/radio3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="24dp"
+                />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ta"
+        app:layout_constraintTop_toBottomOf="@id/choices"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="18dp"
+        >
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:text="Total Payment Amount"
+            android:textSize="18sp"
+            android:textColor="@color/default_button"
+            android:paddingVertical="6dp"
+            android:layout_gravity="center"
+            android:textAlignment="center"
+            android:paddingHorizontal="12dp"
+            android:textStyle="bold"
+            />
+
+        <TextView
+            android:id="@+id/amount_tv"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            tools:text="$10.000"
+            android:textSize="18sp"
+            android:textColor="@color/default_button"
+            android:paddingVertical="6dp"
+            android:layout_gravity="center"
+            android:textAlignment="center"
+            android:paddingHorizontal="12dp"
+            android:textStyle="bold"
+            />
+
+    </LinearLayout>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        app:layout_constraintTop_toBottomOf="@id/ta"
+        android:layout_marginHorizontal="18dp"
+        android:layout_marginTop="18dp"
+        app:cornerRadius="10dp"
+        android:background="@drawable/round_button"
+        app:backgroundTintMode="src_over"
+        app:backgroundTint="@color/default_button"
+        android:text="Proceed with the payment"
+        android:textAllCaps="false"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        android:textColor="@color/white"
+        />
+</androidx.constraintlayout.widget.ConstraintLayout>

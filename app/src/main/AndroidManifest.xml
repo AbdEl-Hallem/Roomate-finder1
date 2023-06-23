@@ -20,38 +20,36 @@
         android:theme="@style/Theme.RoommateFinder"
         tools:targetApi="31">
         <activity
+            android:name=".ForgetPasswordActivity"
+            android:exported="false" />
+        <activity
             android:name=".filter"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
-
         </activity>
         <activity
-        android:name=".Setting"
-        android:exported="false">
-        <meta-data
-            android:name="android.app.lib_name"
-            android:value="" />
-
-    </activity>
+            android:name=".Setting"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
         <activity
-        android:name=".search"
-        android:exported="false">
-        <meta-data
-            android:name="android.app.lib_name"
-            android:value="" />
-
-    </activity>
+            android:name=".search"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
         <activity
             android:name=".ratingActivity"
             android:exported="false">
-        <meta-data
-            android:name="android.app.lib_name"
-            android:value="" />
-
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
         </activity>
-
         <activity
             android:name=".FavoriteActivity"
             android:exported="false">
@@ -62,9 +60,6 @@
         <activity
             android:name=".posts"
             android:exported="true">
-
-
-
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -79,14 +74,6 @@
         <activity
             android:name=".home_page"
             android:exported="true">
-
-
-
-
-
-
-
-
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -94,15 +81,6 @@
         <activity
             android:name=".profile_screen"
             android:exported="true">
-
-
-
-
-
-
-
-
-
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -157,7 +135,6 @@
         <activity
             android:name=".MainActivity"
             android:exported="true">
-
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
